@@ -1,0 +1,96 @@
+# config.yaml
+
+general:
+  random_seed: 42 # Set a fixed random seed for reproducibility
+  device: "cuda" # Device to use for training and inference ("cuda" or "cpu")
+
+data:
+  data_file: "mixed_dataset_small_10mm.txt" # REVERTED 2026-06-02: synthetic slab-enriched datasets (v2-v5, tools/make_gnn_dataset.py) fixed the isolated thickness metric but COLLAPSED end-to-end repair to ~43% (vs 79% here). The isaac-derived mixed_dataset gives the best repair + overlap; canonical GNN = gnn_latentspace_node10_..._20260601-131321 (this dataset + new encoder). Slab datasets kept in data/ for the thesis ablation only.
+  label_names: ["overlap_1", "thickness_1"] # Names of the 2 continuous labels in the dataset
+  n_uniform: 50000 # Number of uniform samples to generate per shape
+  n_surface: 15000 # was 10000 — better surface coverage for thin shapes at lower sampling_min
+  sigma: 0.01 # Standard deviation for Gaussian noise added to surface samples
+  data_folder: "data" # Base folder for all data-related files
+  sdf_output_dir: "sdf_samples" # Subfolder for generated SDF samples
+  sampling_min: 0.002 # was 0.025 (50mm full floor) — lowered to 8mm full so the codec can represent thin beams (thickness<=20mm). See tools/codec_floor_test.py.
+  sampling_max: 0.15 # was 0.95 (1.9m full) — narrowed to 30cm full (BLOCK_MAX=20cm + headroom); tighter range => better codec reconstruction in the real size band
+
+
+autoencoder:
+  latent_dim: 8 # Dimensionality of the latent code z representing each shape
+  n_shapes: 75000 # boxes are a 3-DOF family — 30k log-uniform shapes already cover it densely; 100k was 5x overkill and made epochs ~3x longer for no quality gain
+  n_surface: 2000 # Surface points per shape (encoder input)
+  n_query: 5000 # Query points per shape (decoder target) — halved from 10k: cuts per-epoch work in half (total work = n_shapes*n_query, independent of batch_size). 5k is plenty for simple box SDFs.
+  batch_size: 256 # Shapes per batch. GPU mem scales as batch_size*n_query; keep the PRODUCT <= ~1.3M on the 10.57GB GPU. 256*5k=1.28M fits (~7GB); 256*10k=2.56M OOMs. batch_size does NOT change total work, only chunking/GPU-saturation. Not the same as training.batch_size_gnn (2048).
+  autoencoder_folder: "encoder_decoder_model" # Subfolder for trained autoencoder models
+  encoder_point_mlp_dims: [128, 256, 512] # Pointwise MLP widths (input is fixed 3D point coords)
+  encoder_fc_dims: [256, 128] # MLP widths after global max pooling (last layer maps to latent_dim)
+
+box_encoder:
+  hidden_dim: 128 # Width of each hidden layer in the BoxEncoder MLP
+  num_layers: 4 # Total linear layers (deeper MLP for better 3 -> latent mapping)
+
+sdf_decoder:
+  latent_dim: 8 # Dimensionality of the latent code z representing each shape
+  hidden_dim: 256 # Number of hidden units in each layer of the MLP decoder
+  num_layers: 5 # Total number of layers in the MLP decoder (including input and output layers)
+  point_dim: 3 # Dimensionality of input points (3D coordinates)
+  output_dim: 1 # Dimensionality of output SDF value (scalar)
+  sdf_folder: "sdf_models" # Subfolder for trained SDF decoder models
+  use_siren: False # Whether to use SIREN activations in the MLP decoder
+  omega: 30.0 # Omega parameter for SIREN activations (if use_siren is True)
+
+training:
+  lambda_reg: 0.0003 # Weight for the latent code regularization term in the loss function
+  sdf_clamp_delta: 0.1 # DeepSDF trick: clamp SDF values to [-delta, delta] before loss (focuses on surface)
+  train_split: 0.8 # Proportion of shapes to use for training
+  val_split: 0.1 # Proportion of shapes to use for validation
+  test_split: 0.1 # Proportion of shapes to use for testing
+  batch_size_decoder: 65536 # Number of samples per batch during training
+  batch_size_gnn: 2048 # small-mixed branch: 174k samples / 2048 ≈ 85 iters/epoch — keeps gradient updates frequent
+  epochs: 350 # Maximum number of training epochs
+  learning_rate: 0.002 # Learning rate for the optimizer
+  patience: 60 # Number of epochs with no improvement on validation loss before early stopping
+  # Two-stage training hyperparameters
+  stage1_epochs: 200 # Stage 1 (auto-decoder): max epochs for decoder + latent code training
+  stage1_lr: 0.001 # Stage 1 learning rate
+  stage1_patience: 35 # Stage 1 early stopping patience
+  stage2_epochs: 100 # Stage 2 (encoder distillation): max epochs
+  stage2_lr: 0.001 # Stage 2 learning rate
+  stage2_patience: 20 # Stage 2 early stopping patience
+  stage3_epochs: 30 # Stage 3 (optional joint finetune): set > 0 to enable
+  stage3_lr: 0.0001 # Stage 3 learning rate (should be much smaller than stage1)
+
+gnn:
+  node_dim: 10   # latentspace branch: 8d encoder latent (BoxEncoder) + node_type(2). Parameter branch used 5 (size_xyz + type).
+  edge_dim: 6    # ΔX + ΔY + ΔZ + dist_XY + dist_XZ + dist_YZ (axis-symmetric tangential magnitudes)
+  hidden_dim: 128 # small-mixed branch: shrunk 512 -> 128 (~132k total params, fits the smaller mixed dataset)
+  heads: 4 # small-mixed branch: shrunk 8 -> 4
+  head_hidden: 64 # small-mixed branch: shrunk 128 -> 64 (per-head dim 32)
+  dropout: 0.1 # Dropout rate for GAT layers
+  output_dim: 2 # [overlap, thickness] — direct regression, mode-head + binary as aux only
+  alpha: 0.1 # Weight for BCE(assembly_good) in the GNN loss function
+  monitor_metric: "composite_critical_mae" # Metric used for best-checkpoint + early stopping; use "val_loss" or any key from val_metrics
+  monitor_mode: "min" # "max" for F1-like metrics, "min" for loss/MAE metrics
+  gnn_folder: "gnn_models" # Subfolder for trained GNN models
+  # Thresholds from the Isaac Simulation for classifying the 2 labels (used for evaluation and design repair)
+  thresh_overlap_min: 0.010     # 10mm-branch: was 16mm; back to the original 10mm rule (matches the 20260513_0823 isaac base)
+  thresh_thickness_max: 0.020   # Thickness_m    > x  → BLOCK_TOO_THICK
+
+design_repair:
+  # Tuned via tools/repair_grid_search.py on 50 infeasible samples
+  # from the isaac_sim_dataset (v10 isaac-trained checkpoint). Best
+  # config: binary-only push + moderate manifold pull + headroom for
+  # thickness shrinking. Reaches 28% analytical-OK on hardest cases
+  # (vs 18% with old config).
+  lambda_shape: 5.0 # Manifold pull on z. Higher reduces bluffs but starves repair-success.
+  lambda_position: 1.0 # Position drift penalty (tangential moves are cheap)
+  lambda_reg: 0.1 # L2 on z-norm
+  max_z_drift: 1.5 # Was 0.5 — allow enough z change to shrink thick blocks (isaac dist has thickness up to 200mm)
+  max_pos_drift: 0.75 # Maximum allowed change in absolute positions during optimization
+  hinge_scale: 0.0 # Disabled: hinges pushed Adam off-manifold and INCREASED bluffs without improving real repair-success. Saturating binary alone drives optimization.
+  hinge_weights: [5.0, 5.0]  # [overlap, thickness] — kept for reference but multiplied by hinge_scale=0
+  num_steps: 1000 # small-mixed branch: 400 -> 1000 to give the periodic analytical snap room to converge (snap every 50 steps -> ~20 snap events)
+  learning_rate: 0.003 # small-mixed branch: 0.01 -> 0.003 for smaller per-step updates between snaps
+  target_p: 0.9 # Target probability for the repaired design
+  optimizer_failed_only: False # If true, show only examples the optimizer failed to repair (still infeasible after optimization)

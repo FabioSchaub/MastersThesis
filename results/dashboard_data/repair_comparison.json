@@ -1,0 +1,6346 @@
+{
+ "meta": {
+  "thresh_overlap_mm": 10.0,
+  "thresh_thickness_mm": 20.0,
+  "states": [
+   "initial",
+   "param",
+   "latent"
+  ],
+  "state_titles": {
+   "initial": "1 \u00b7 Generated + analytical pre-processing",
+   "param": "2 \u00b7 Repaired in parameter space",
+   "latent": "3 \u00b7 Repaired in latent space"
+  },
+  "variants": {
+   "param": {
+    "branch": "feature/parameter-optimization",
+    "checkpoint": "gnn_small-mixed-10mm_node5_batchsize2048_20260519-092003.pth",
+    "scale_factor": 1.0
+   },
+   "latent": {
+    "branch": "feature/latentspace-optimization",
+    "checkpoint": "gnn_latentspace_node10_batchsize2048_20260608-124934.pth",
+    "scale_factor": 1.0
+   }
+  },
+  "warnings": []
+ },
+ "designs": [
+  {
+   "design": "arch_candidate_3",
+   "label": "arch_candidate_3  (row 0, 3 blocks, 2 joints)",
+   "csv_file": "arch_candidate_3_ml_input.csv",
+   "row": 0,
+   "n_blocks": 3,
+   "connections": [
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     2
+    ]
+   ],
+   "blocks": {
+    "raw": {
+     "0": {
+      "center_mm": [
+       0.0,
+       -50.0,
+       100.0
+      ],
+      "edge_lengths_mm": [
+       28.0,
+       28.0,
+       200.0
+      ]
+     },
+     "1": {
+      "center_mm": [
+       0.0,
+       50.0,
+       100.0
+      ],
+      "edge_lengths_mm": [
+       28.0,
+       28.0,
+       200.0
+      ]
+     },
+     "2": {
+      "center_mm": [
+       0.0,
+       0.0,
+       224.0
+      ],
+      "edge_lengths_mm": [
+       24.0,
+       200.0,
+       48.0
+      ]
+     }
+    },
+    "initial": {
+     "0": {
+      "center_mm": [
+       0.0,
+       -50.00000074505806,
+       100.00000149011612
+      ],
+      "edge_lengths_mm": [
+       28.0,
+       28.0,
+       200.0
+      ]
+     },
+     "1": {
+      "center_mm": [
+       0.0,
+       50.00000074505806,
+       100.00000149011612
+      ],
+      "edge_lengths_mm": [
+       28.0,
+       28.0,
+       200.0
+      ]
+     },
+     "2": {
+      "center_mm": [
+       0.0,
+       0.0,
+       224.0
+      ],
+      "edge_lengths_mm": [
+       24.0,
+       200.0,
+       48.0
+      ]
+     }
+    },
+    "param": {
+     "0": {
+      "center_mm": [
+       0.0,
+       -50.00000074505806,
+       100.00000149011612
+      ],
+      "edge_lengths_mm": [
+       28.00000086426735,
+       28.00000086426735,
+       200.00000298023224
+      ]
+     },
+     "1": {
+      "center_mm": [
+       0.0,
+       50.00000074505806,
+       100.00000149011612
+      ],
+      "edge_lengths_mm": [
+       28.00000086426735,
+       28.00000086426735,
+       200.00000298023224
+      ]
+     },
+     "2": {
+      "center_mm": [
+       -2.700928831472993,
+       -19.999999552965164,
+       210.53989231586456
+      ],
+      "edge_lengths_mm": [
+       24.000000208616257,
+       200.00000298023224,
+       21.079791709780693
+      ]
+     }
+    },
+    "latent": {
+     "0": {
+      "center_mm": [
+       0.0,
+       -50.00000074505806,
+       100.00000149011612
+      ],
+      "edge_lengths_mm": [
+       28.00000086426735,
+       28.00000086426735,
+       200.00000298023224
+      ]
+     },
+     "1": {
+      "center_mm": [
+       0.0,
+       50.00000074505806,
+       100.00000149011612
+      ],
+      "edge_lengths_mm": [
+       28.00000086426735,
+       28.00000086426735,
+       200.00000298023224
+      ]
+     },
+     "2": {
+      "center_mm": [
+       -1.0454379953444004,
+       -19.999999552965164,
+       228.7311553955078
+      ],
+      "edge_lengths_mm": [
+       22.840911522507668,
+       200.0933736562729,
+       57.462289929389954
+      ]
+     }
+    }
+   },
+   "pairs": [
+    {
+     "pair_id": "0-2",
+     "parent": 0,
+     "child": 2,
+     "contact_face_code": 4,
+     "contact_axis": 2,
+     "raw": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 24.0,
+      "thickness_mm": 48.0,
+      "analytical_ok": false,
+      "p_feasible": 0.00010163895058212802,
+      "gnn_overlap_mm": 15.287788584828377,
+      "gnn_thickness_mm": 55.406831204891205,
+      "gnn_ok": false,
+      "bluff": false
+     },
+     "initial": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 24.0,
+      "thickness_mm": 48.0,
+      "analytical_ok": false,
+      "p_feasible": 0.00010163895058212802,
+      "gnn_overlap_mm": 15.287788584828377,
+      "gnn_thickness_mm": 55.406831204891205,
+      "gnn_ok": false,
+      "bluff": false
+     },
+     "initial_p_feasible_param": 0.009288215078413486,
+     "initial_p_feasible_latent": 0.00010163895058212802,
+     "param": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 23.29907170496881,
+      "thickness_mm": 21.079791709780693,
+      "analytical_ok": false,
+      "p_feasible": 0.721235454082489,
+      "gnn_overlap_mm": 19.61388811469078,
+      "gnn_thickness_mm": 21.209537982940674,
+      "gnn_ok": false,
+      "bluff": false
+     },
+     "latent": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 22.840911522507668,
+      "thickness_mm": 57.462289929389954,
+      "analytical_ok": false,
+      "p_feasible": 0.00024392282648477703,
+      "gnn_overlap_mm": 15.719499439001083,
+      "gnn_thickness_mm": 62.41774186491966,
+      "gnn_ok": false,
+      "bluff": false
+     }
+    },
+    {
+     "pair_id": "1-2",
+     "parent": 1,
+     "child": 2,
+     "contact_face_code": 4,
+     "contact_axis": 2,
+     "raw": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 24.0,
+      "thickness_mm": 48.0,
+      "analytical_ok": false,
+      "p_feasible": 0.00019668367167469114,
+      "gnn_overlap_mm": 15.447624027729034,
+      "gnn_thickness_mm": 54.88201975822449,
+      "gnn_ok": false,
+      "bluff": false
+     },
+     "initial": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 24.0,
+      "thickness_mm": 48.0,
+      "analytical_ok": false,
+      "p_feasible": 0.00019668367167469114,
+      "gnn_overlap_mm": 15.447624027729034,
+      "gnn_thickness_mm": 54.88201975822449,
+      "gnn_ok": false,
+      "bluff": false
+     },
+     "initial_p_feasible_param": 0.01083129458129406,
+     "initial_p_feasible_latent": 0.00019668367167469114,
+     "param": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 23.29907170496881,
+      "thickness_mm": 21.079791709780693,
+      "analytical_ok": false,
+      "p_feasible": 0.45452794432640076,
+      "gnn_overlap_mm": 13.980146497488022,
+      "gnn_thickness_mm": 26.41994133591652,
+      "gnn_ok": false,
+      "bluff": false
+     },
+     "latent": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 22.840911522507668,
+      "thickness_mm": 57.462289929389954,
+      "analytical_ok": false,
+      "p_feasible": 0.0004192226624581963,
+      "gnn_overlap_mm": 13.28647043555975,
+      "gnn_thickness_mm": 60.0147545337677,
+      "gnn_ok": false,
+      "bluff": false
+     }
+    }
+   ]
+  },
+  {
+   "design": "cactus_candidate_4",
+   "label": "cactus_candidate_4  (row 0, 8 blocks, 7 joints)",
+   "csv_file": "cactus_candidate_4_ml_input.csv",
+   "row": 0,
+   "n_blocks": 8,
+   "connections": [
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     3,
+     4
+    ],
+    [
+     4,
+     5
+    ],
+    [
+     4,
+     6
+    ],
+    [
+     4,
+     7
+    ]
+   ],
+   "blocks": {
+    "raw": {
+     "0": {
+      "center_mm": [
+       0.0,
+       40.0,
+       24.0
+      ],
+      "edge_lengths_mm": [
+       100.0,
+       24.0,
+       48.0
+      ]
+     },
+     "1": {
+      "center_mm": [
+       0.0,
+       -40.0,
+       24.0
+      ],
+      "edge_lengths_mm": [
+       100.0,
+       24.0,
+       48.0
+      ]
+     },
+     "2": {
+      "center_mm": [
+       0.0,
+       0.0,
+       52.0
+      ],
+      "edge_lengths_mm": [
+       100.0,
+       100.0,
+       8.0
+      ]
+     },
+     "3": {
+      "center_mm": [
+       0.0,
+       0.0,
+       106.0
+      ],
+      "edge_lengths_mm": [
+       28.0,
+       28.0,
+       100.0
+      ]
+     },
+     "4": {
+      "center_mm": [
+       0.0,
+       0.0,
+       170.0
+      ],
+      "edge_lengths_mm": [
+       200.0,
+       28.0,
+       28.0
+      ]
+     },
+     "5": {
+      "center_mm": [
+       0.0,
+       0.0,
+       234.0
+      ],
+      "edge_lengths_mm": [
+       28.0,
+       28.0,
+       100.0
+      ]
+     },
+     "6": {
+      "center_mm": [
+       70.0,
+       0.0,
+       212.0
+      ],
+      "edge_lengths_mm": [
+       28.0,
+       28.0,
+       56.0
+      ]
+     },
+     "7": {
+      "center_mm": [
+       -70.0,
+       0.0,
+       212.0
+      ],
+      "edge_lengths_mm": [
+       28.0,
+       28.0,
+       56.0
+      ]
+     }
+    },
+    "initial": {
+     "0": {
+      "center_mm": [
+       0.0,
+       39.99999910593033,
+       23.99999648332596
+      ],
+      "edge_lengths_mm": [
+       100.0,
+       24.0,
+       48.0
+      ]
+     },
+     "1": {
+      "center_mm": [
+       0.0,
+       -39.99999910593033,
+       23.99999648332596
+      ],
+      "edge_lengths_mm": [
+       100.0,
+       24.0,
+       48.0
+      ]
+     },
+     "2": {
+      "center_mm": [
+       0.0,
+       0.0,
+       51.99999734759331
+      ],
+      "edge_lengths_mm": [
+       100.0,
+       100.0,
+       8.0
+      ]
+     },
+     "3": {
+      "center_mm": [
+       0.0,
+       0.0,
+       105.99999874830246
+      ],
+      "edge_lengths_mm": [
+       28.0,
+       28.0,
+       100.0
+      ]
+     },
+     "4": {
+      "center_mm": [
+       0.0,
+       0.0,
+       170.0
+      ],
+      "edge_lengths_mm": [
+       200.0,
+       28.0,
+       28.0
+      ]
+     },
+     "5": {
+      "center_mm": [
+       0.0,
+       0.0,
+       233.99999737739563
+      ],
+      "edge_lengths_mm": [
+       28.0,
+       28.0,
+       100.0
+      ]
+     },
+     "6": {
+      "center_mm": [
+       70.00000029802322,
+       0.0,
+       211.99999749660492
+      ],
+      "edge_lengths_mm": [
+       28.0,
+       28.0,
+       56.0
+      ]
+     },
+     "7": {
+      "center_mm": [
+       -70.00000029802322,
+       0.0,
+       211.99999749660492
+      ],
+      "edge_lengths_mm": [
+       28.0,
+       28.0,
+       56.0
+      ]
+     }
+    },
+    "param": {
+     "0": {
+      "center_mm": [
+       0.0,
+       39.99999910593033,
+       23.99999648332596
+      ],
+      "edge_lengths_mm": [
+       100.00000149011612,
+       24.000000208616257,
+       48.00000041723251
+      ]
+     },
+     "1": {
+      "center_mm": [
+       0.0,
+       -39.99999910593033,
+       23.99999648332596
+      ],
+      "edge_lengths_mm": [
+       100.00000149011612,
+       24.000000208616257,
+       48.00000041723251
+      ]
+     },
+     "2": {
+      "center_mm": [
+       0.0,
+       0.0,
+       51.99999734759331
+      ],
+      "edge_lengths_mm": [
+       100.00000149011612,
+       100.00000149011612,
+       8.00000037997961
+      ]
+     },
+     "3": {
+      "center_mm": [
+       19.999999552965164,
+       -19.999999552965164,
+       63.11146914958954
+      ],
+      "edge_lengths_mm": [
+       28.00000086426735,
+       28.00000086426735,
+       14.222939498722553
+      ]
+     },
+     "4": {
+      "center_mm": [
+       17.29818806052208,
+       -17.455672845244408,
+       80.04000782966614
+      ],
+      "edge_lengths_mm": [
+       200.00000298023224,
+       31.768668442964554,
+       19.634142518043518
+      ]
+     },
+     "5": {
+      "center_mm": [
+       -19.999999552965164,
+       19.999999552965164,
+       154.35707569122314
+      ],
+      "edge_lengths_mm": [
+       34.519702196121216,
+       28.00000086426735,
+       128.9999932050705
+      ]
+     },
+     "6": {
+      "center_mm": [
+       51.71915888786316,
+       19.999999552965164,
+       125.75708329677582
+      ],
+      "edge_lengths_mm": [
+       28.00000086426735,
+       28.00000086426735,
+       71.80000096559525
+      ]
+     },
+     "7": {
+      "center_mm": [
+       -50.00000074505806,
+       -16.13701321184635,
+       125.75708329677582
+      ],
+      "edge_lengths_mm": [
+       28.00000086426735,
+       28.00000086426735,
+       71.80000096559525
+      ]
+     }
+    },
+    "latent": {
+     "0": {
+      "center_mm": [
+       0.0,
+       39.99999910593033,
+       23.99999648332596
+      ],
+      "edge_lengths_mm": [
+       100.00000149011612,
+       24.000000208616257,
+       48.00000041723251
+      ]
+     },
+     "1": {
+      "center_mm": [
+       0.0,
+       -39.99999910593033,
+       23.99999648332596
+      ],
+      "edge_lengths_mm": [
+       100.00000149011612,
+       24.000000208616257,
+       48.00000041723251
+      ]
+     },
+     "2": {
+      "center_mm": [
+       0.0,
+       0.0,
+       51.99999734759331
+      ],
+      "edge_lengths_mm": [
+       100.00000149011612,
+       100.00000149011612,
+       8.00000037997961
+      ]
+     },
+     "3": {
+      "center_mm": [
+       0.247715855948627,
+       0.18355328938923776,
+       60.69231405854225
+      ],
+      "edge_lengths_mm": [
+       35.93124449253082,
+       35.479795187711716,
+       9.384633041918278
+      ]
+     },
+     "4": {
+      "center_mm": [
+       -1.3686101883649826,
+       11.16579957306385,
+       77.32132077217102
+      ],
+      "edge_lengths_mm": [
+       199.32107627391815,
+       28.12499925494194,
+       23.873386904597282
+      ]
+     },
+     "5": {
+      "center_mm": [
+       -1.4901600079610944,
+       11.274123564362526,
+       153.90880405902863
+      ],
+      "edge_lengths_mm": [
+       37.379663437604904,
+       36.57737746834755,
+       129.30159270763397
+      ]
+     },
+     "6": {
+      "center_mm": [
+       75.01183450222015,
+       6.241559982299805,
+       97.34756499528885
+      ],
+      "edge_lengths_mm": [
+       27.685198932886124,
+       35.021912306547165,
+       16.179101541638374
+      ]
+     },
+     "7": {
+      "center_mm": [
+       -84.7373753786087,
+       6.018494721502066,
+       97.52489626407623
+      ],
+      "edge_lengths_mm": [
+       27.67706848680973,
+       35.469699651002884,
+       16.53376594185829
+      ]
+     }
+    }
+   },
+   "pairs": [
+    {
+     "pair_id": "0-2",
+     "parent": 0,
+     "child": 2,
+     "contact_face_code": 4,
+     "contact_axis": 2,
+     "raw": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 22.000000000000004,
+      "thickness_mm": 8.0,
+      "analytical_ok": true,
+      "p_feasible": 0.99996018409729,
+      "gnn_overlap_mm": 19.55900527536869,
+      "gnn_thickness_mm": 11.489711701869965,
+      "gnn_ok": true,
+      "bluff": false
+     },
+     "initial": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 22.000000894069675,
+      "thickness_mm": 8.0,
+      "analytical_ok": true,
+      "p_feasible": 0.99996018409729,
+      "gnn_overlap_mm": 19.55900527536869,
+      "gnn_thickness_mm": 11.489711701869965,
+      "gnn_ok": true,
+      "bluff": false
+     },
+     "initial_p_feasible_param": 0.8861022591590881,
+     "initial_p_feasible_latent": 0.99996018409729,
+     "param": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 22.00000174343586,
+      "thickness_mm": 8.00000037997961,
+      "analytical_ok": true,
+      "p_feasible": 0.8861022591590881,
+      "gnn_overlap_mm": 21.34736068546772,
+      "gnn_thickness_mm": 16.9014111161232,
+      "gnn_ok": true,
+      "bluff": false
+     },
+     "latent": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 22.00000174343586,
+      "thickness_mm": 8.00000037997961,
+      "analytical_ok": true,
+      "p_feasible": 0.99996018409729,
+      "gnn_overlap_mm": 19.55900527536869,
+      "gnn_thickness_mm": 11.489711701869965,
+      "gnn_ok": true,
+      "bluff": false
+     }
+    },
+    {
+     "pair_id": "1-2",
+     "parent": 1,
+     "child": 2,
+     "contact_face_code": 4,
+     "contact_axis": 2,
+     "raw": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 22.000000000000004,
+      "thickness_mm": 8.0,
+      "analytical_ok": true,
+      "p_feasible": 0.9999622106552124,
+      "gnn_overlap_mm": 19.583597779273987,
+      "gnn_thickness_mm": 11.464908719062805,
+      "gnn_ok": true,
+      "bluff": false
+     },
+     "initial": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 22.000000894069675,
+      "thickness_mm": 8.0,
+      "analytical_ok": true,
+      "p_feasible": 0.9999622106552124,
+      "gnn_overlap_mm": 19.583597779273987,
+      "gnn_thickness_mm": 11.464908719062805,
+      "gnn_ok": true,
+      "bluff": false
+     },
+     "initial_p_feasible_param": 0.8927444219589233,
+     "initial_p_feasible_latent": 0.9999622106552124,
+     "param": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 22.00000174343586,
+      "thickness_mm": 8.00000037997961,
+      "analytical_ok": true,
+      "p_feasible": 0.8927444219589233,
+      "gnn_overlap_mm": 21.501172333955765,
+      "gnn_thickness_mm": 16.597412526607513,
+      "gnn_ok": true,
+      "bluff": false
+     },
+     "latent": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 22.00000174343586,
+      "thickness_mm": 8.00000037997961,
+      "analytical_ok": true,
+      "p_feasible": 0.9999622106552124,
+      "gnn_overlap_mm": 19.583597779273987,
+      "gnn_thickness_mm": 11.464908719062805,
+      "gnn_ok": true,
+      "bluff": false
+     }
+    },
+    {
+     "pair_id": "2-3",
+     "parent": 2,
+     "child": 3,
+     "contact_face_code": 4,
+     "contact_axis": 2,
+     "raw": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 28.0,
+      "thickness_mm": 100.0,
+      "analytical_ok": false,
+      "p_feasible": 2.511412085237641e-11,
+      "gnn_overlap_mm": 18.214469775557518,
+      "gnn_thickness_mm": 88.7920930981636,
+      "gnn_ok": false,
+      "bluff": false
+     },
+     "initial": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 28.0,
+      "thickness_mm": 100.0,
+      "analytical_ok": false,
+      "p_feasible": 2.511416768991026e-11,
+      "gnn_overlap_mm": 18.214477226138115,
+      "gnn_thickness_mm": 88.7920930981636,
+      "gnn_ok": false,
+      "bluff": false
+     },
+     "initial_p_feasible_param": 9.283588039816723e-16,
+     "initial_p_feasible_latent": 2.511416768991026e-11,
+     "param": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 28.00000086426735,
+      "thickness_mm": 14.222939498722553,
+      "analytical_ok": true,
+      "p_feasible": 0.7045210003852844,
+      "gnn_overlap_mm": 21.284790709614754,
+      "gnn_thickness_mm": 11.566169559955597,
+      "gnn_ok": true,
+      "bluff": false
+     },
+     "latent": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 35.479795187711716,
+      "thickness_mm": 9.384633041918278,
+      "analytical_ok": true,
+      "p_feasible": 0.9995408058166504,
+      "gnn_overlap_mm": 22.43969962000847,
+      "gnn_thickness_mm": 9.44848358631134,
+      "gnn_ok": true,
+      "bluff": false
+     }
+    },
+    {
+     "pair_id": "3-4",
+     "parent": 3,
+     "child": 4,
+     "contact_face_code": 4,
+     "contact_axis": 2,
+     "raw": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 28.0,
+      "thickness_mm": 28.0,
+      "analytical_ok": false,
+      "p_feasible": 0.008069843053817749,
+      "gnn_overlap_mm": 14.97460063546896,
+      "gnn_thickness_mm": 23.94183725118637,
+      "gnn_ok": false,
+      "bluff": false
+     },
+     "initial": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 28.0,
+      "thickness_mm": 28.0,
+      "analytical_ok": false,
+      "p_feasible": 0.008069843053817749,
+      "gnn_overlap_mm": 14.97460063546896,
+      "gnn_thickness_mm": 23.94183725118637,
+      "gnn_ok": false,
+      "bluff": false
+     },
+     "initial_p_feasible_param": 0.00010026190284406766,
+     "initial_p_feasible_latent": 0.008069843053817749,
+     "param": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 27.340007945895195,
+      "thickness_mm": 19.634142518043518,
+      "analytical_ok": true,
+      "p_feasible": 0.9504496455192566,
+      "gnn_overlap_mm": 14.758952893316746,
+      "gnn_thickness_mm": 17.40548014640808,
+      "gnn_ok": true,
+      "bluff": false
+     },
+     "latent": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 20.820150937652215,
+      "thickness_mm": 23.873386904597282,
+      "analytical_ok": false,
+      "p_feasible": 0.9765884876251221,
+      "gnn_overlap_mm": 15.974357724189758,
+      "gnn_thickness_mm": 19.963089376688004,
+      "gnn_ok": true,
+      "bluff": true
+     }
+    },
+    {
+     "pair_id": "4-5",
+     "parent": 4,
+     "child": 5,
+     "contact_face_code": 4,
+     "contact_axis": 2,
+     "raw": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 28.0,
+      "thickness_mm": 100.0,
+      "analytical_ok": false,
+      "p_feasible": 6.509380455099745e-06,
+      "gnn_overlap_mm": 15.659334138035774,
+      "gnn_thickness_mm": 94.65213119983673,
+      "gnn_ok": false,
+      "bluff": false
+     },
+     "initial": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 28.0,
+      "thickness_mm": 100.0,
+      "analytical_ok": false,
+      "p_feasible": 6.509380455099745e-06,
+      "gnn_overlap_mm": 15.659334138035774,
+      "gnn_thickness_mm": 94.65213119983673,
+      "gnn_ok": false,
+      "bluff": false
+     },
+     "initial_p_feasible_param": 1.904805116805311e-13,
+     "initial_p_feasible_latent": 6.509380455099745e-06,
+     "param": {
+      "contact_face_code": 2,
+      "contact_axis": 1,
+      "overlap_mm": 0.0,
+      "thickness_mm": 128.9999932050705,
+      "analytical_ok": false,
+      "p_feasible": 3.084507582684637e-08,
+      "gnn_overlap_mm": 6.120937876403332,
+      "gnn_thickness_mm": 85.10729670524597,
+      "gnn_ok": false,
+      "bluff": false
+     },
+     "latent": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 28.12499925494194,
+      "thickness_mm": 129.30159270763397,
+      "analytical_ok": false,
+      "p_feasible": 1.3772049635690092e-13,
+      "gnn_overlap_mm": 18.99232529103756,
+      "gnn_thickness_mm": 117.26642400026321,
+      "gnn_ok": false,
+      "bluff": false
+     }
+    },
+    {
+     "pair_id": "4-6",
+     "parent": 4,
+     "child": 6,
+     "contact_face_code": 4,
+     "contact_axis": 2,
+     "raw": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 27.999999999999996,
+      "thickness_mm": 56.0,
+      "analytical_ok": false,
+      "p_feasible": 4.768669532495551e-05,
+      "gnn_overlap_mm": 18.815629184246063,
+      "gnn_thickness_mm": 53.33128944039345,
+      "gnn_ok": false,
+      "bluff": false
+     },
+     "initial": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 27.999999999999996,
+      "thickness_mm": 56.0,
+      "analytical_ok": false,
+      "p_feasible": 4.768669532495551e-05,
+      "gnn_overlap_mm": 18.815629184246063,
+      "gnn_thickness_mm": 53.33128944039345,
+      "gnn_ok": false,
+      "bluff": false
+     },
+     "initial_p_feasible_param": 0.00016725245222914964,
+     "initial_p_feasible_latent": 4.768669532495551e-05,
+     "param": {
+      "contact_face_code": 2,
+      "contact_axis": 1,
+      "overlap_mm": 0.0,
+      "thickness_mm": 71.80000096559525,
+      "analytical_ok": false,
+      "p_feasible": 2.6716057618614286e-05,
+      "gnn_overlap_mm": 3.702358342707157,
+      "gnn_thickness_mm": 51.675088703632355,
+      "gnn_ok": false,
+      "bluff": false
+     },
+     "latent": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 26.649216189980507,
+      "thickness_mm": 16.179101541638374,
+      "analytical_ok": true,
+      "p_feasible": 0.9881979823112488,
+      "gnn_overlap_mm": 18.20344477891922,
+      "gnn_thickness_mm": 15.292905271053314,
+      "gnn_ok": true,
+      "bluff": false
+     }
+    },
+    {
+     "pair_id": "4-7",
+     "parent": 4,
+     "child": 7,
+     "contact_face_code": 4,
+     "contact_axis": 2,
+     "raw": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 27.999999999999996,
+      "thickness_mm": 56.0,
+      "analytical_ok": false,
+      "p_feasible": 5.238168523646891e-05,
+      "gnn_overlap_mm": 18.9135130494833,
+      "gnn_thickness_mm": 53.05665358901024,
+      "gnn_ok": false,
+      "bluff": false
+     },
+     "initial": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 27.999999999999996,
+      "thickness_mm": 56.0,
+      "analytical_ok": false,
+      "p_feasible": 5.238168523646891e-05,
+      "gnn_overlap_mm": 18.9135130494833,
+      "gnn_thickness_mm": 53.05665358901024,
+      "gnn_ok": false,
+      "bluff": false
+     },
+     "initial_p_feasible_param": 0.00013644710998050869,
+     "initial_p_feasible_latent": 5.238168523646891e-05,
+     "param": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 28.00000086426735,
+      "thickness_mm": 71.80000096559525,
+      "analytical_ok": false,
+      "p_feasible": 1.0348923751735128e-05,
+      "gnn_overlap_mm": 13.066994957625866,
+      "gnn_thickness_mm": 54.89390343427658,
+      "gnn_ok": false,
+      "bluff": false
+     },
+     "latent": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 26.650044601410627,
+      "thickness_mm": 16.53376594185829,
+      "analytical_ok": true,
+      "p_feasible": 0.9874169826507568,
+      "gnn_overlap_mm": 17.114443704485893,
+      "gnn_thickness_mm": 15.23067057132721,
+      "gnn_ok": true,
+      "bluff": false
+     }
+    }
+   ]
+  },
+  {
+   "design": "castle_candidate_4",
+   "label": "castle_candidate_4  (row 0, 10 blocks, 9 joints)",
+   "csv_file": "castle_candidate_4_ml_input.csv",
+   "row": 0,
+   "n_blocks": 10,
+   "connections": [
+    [
+     0,
+     4
+    ],
+    [
+     1,
+     4
+    ],
+    [
+     2,
+     4
+    ],
+    [
+     3,
+     4
+    ],
+    [
+     4,
+     5
+    ],
+    [
+     4,
+     6
+    ],
+    [
+     4,
+     7
+    ],
+    [
+     4,
+     8
+    ],
+    [
+     4,
+     9
+    ]
+   ],
+   "blocks": {
+    "raw": {
+     "0": {
+      "center_mm": [
+       40.0,
+       80.0,
+       28.0
+      ],
+      "edge_lengths_mm": [
+       28.0,
+       28.0,
+       56.0
+      ]
+     },
+     "1": {
+      "center_mm": [
+       40.0,
+       -80.0,
+       28.0
+      ],
+      "edge_lengths_mm": [
+       28.0,
+       28.0,
+       56.0
+      ]
+     },
+     "2": {
+      "center_mm": [
+       -40.0,
+       80.0,
+       28.0
+      ],
+      "edge_lengths_mm": [
+       28.0,
+       28.0,
+       56.0
+      ]
+     },
+     "3": {
+      "center_mm": [
+       -40.0,
+       -80.0,
+       28.0
+      ],
+      "edge_lengths_mm": [
+       28.0,
+       28.0,
+       56.0
+      ]
+     },
+     "4": {
+      "center_mm": [
+       0.0,
+       0.0,
+       60.0
+      ],
+      "edge_lengths_mm": [
+       100.0,
+       200.0,
+       8.0
+      ]
+     },
+     "5": {
+      "center_mm": [
+       40.0,
+       80.0,
+       114.0
+      ],
+      "edge_lengths_mm": [
+       48.0,
+       24.0,
+       100.0
+      ]
+     },
+     "6": {
+      "center_mm": [
+       40.0,
+       -80.0,
+       114.0
+      ],
+      "edge_lengths_mm": [
+       48.0,
+       24.0,
+       100.0
+      ]
+     },
+     "7": {
+      "center_mm": [
+       -40.0,
+       80.0,
+       114.0
+      ],
+      "edge_lengths_mm": [
+       48.0,
+       24.0,
+       100.0
+      ]
+     },
+     "8": {
+      "center_mm": [
+       -40.0,
+       -80.0,
+       114.0
+      ],
+      "edge_lengths_mm": [
+       48.0,
+       24.0,
+       100.0
+      ]
+     },
+     "9": {
+      "center_mm": [
+       0.0,
+       0.0,
+       164.0
+      ],
+      "edge_lengths_mm": [
+       28.0,
+       28.0,
+       200.0
+      ]
+     }
+    },
+    "initial": {
+     "0": {
+      "center_mm": [
+       39.99999910593033,
+       79.99999821186066,
+       28.00000086426735
+      ],
+      "edge_lengths_mm": [
+       28.0,
+       28.0,
+       56.0
+      ]
+     },
+     "1": {
+      "center_mm": [
+       39.99999910593033,
+       -79.99999821186066,
+       28.00000086426735
+      ],
+      "edge_lengths_mm": [
+       28.0,
+       28.0,
+       56.0
+      ]
+     },
+     "2": {
+      "center_mm": [
+       -39.99999910593033,
+       79.99999821186066,
+       28.00000086426735
+      ],
+      "edge_lengths_mm": [
+       28.0,
+       28.0,
+       56.0
+      ]
+     },
+     "3": {
+      "center_mm": [
+       -39.99999910593033,
+       -79.99999821186066,
+       28.00000086426735
+      ],
+      "edge_lengths_mm": [
+       28.0,
+       28.0,
+       56.0
+      ]
+     },
+     "4": {
+      "center_mm": [
+       0.0,
+       0.0,
+       60.0
+      ],
+      "edge_lengths_mm": [
+       100.0,
+       200.0,
+       8.0
+      ]
+     },
+     "5": {
+      "center_mm": [
+       39.99999910593033,
+       79.99999821186066,
+       114.00000005960464
+      ],
+      "edge_lengths_mm": [
+       48.0,
+       24.0,
+       100.0
+      ]
+     },
+     "6": {
+      "center_mm": [
+       39.99999910593033,
+       -79.99999821186066,
+       114.00000005960464
+      ],
+      "edge_lengths_mm": [
+       48.0,
+       24.0,
+       100.0
+      ]
+     },
+     "7": {
+      "center_mm": [
+       -39.99999910593033,
+       79.99999821186066,
+       114.00000005960464
+      ],
+      "edge_lengths_mm": [
+       48.0,
+       24.0,
+       100.0
+      ]
+     },
+     "8": {
+      "center_mm": [
+       -39.99999910593033,
+       -79.99999821186066,
+       114.00000005960464
+      ],
+      "edge_lengths_mm": [
+       48.0,
+       24.0,
+       100.0
+      ]
+     },
+     "9": {
+      "center_mm": [
+       0.0,
+       0.0,
+       164.000004529953
+      ],
+      "edge_lengths_mm": [
+       28.0,
+       28.0,
+       200.0
+      ]
+     }
+    },
+    "param": {
+     "0": {
+      "center_mm": [
+       39.99999910593033,
+       79.99999821186066,
+       28.00000086426735
+      ],
+      "edge_lengths_mm": [
+       28.00000086426735,
+       28.00000086426735,
+       56.0000017285347
+      ]
+     },
+     "1": {
+      "center_mm": [
+       39.99999910593033,
+       -79.99999821186066,
+       28.00000086426735
+      ],
+      "edge_lengths_mm": [
+       28.00000086426735,
+       28.00000086426735,
+       56.0000017285347
+      ]
+     },
+     "2": {
+      "center_mm": [
+       -39.99999910593033,
+       79.99999821186066,
+       28.00000086426735
+      ],
+      "edge_lengths_mm": [
+       28.00000086426735,
+       28.00000086426735,
+       56.0000017285347
+      ]
+     },
+     "3": {
+      "center_mm": [
+       -39.99999910593033,
+       -79.99999821186066,
+       28.00000086426735
+      ],
+      "edge_lengths_mm": [
+       28.00000086426735,
+       28.00000086426735,
+       56.0000017285347
+      ]
+     },
+     "4": {
+      "center_mm": [
+       0.0,
+       0.0,
+       60.00000238418579
+      ],
+      "edge_lengths_mm": [
+       100.00000149011612,
+       200.00000298023224,
+       8.00000037997961
+      ]
+     },
+     "5": {
+      "center_mm": [
+       19.999999552965164,
+       72.38439470529556,
+       128.49999964237213
+      ],
+      "edge_lengths_mm": [
+       48.00000041723251,
+       24.000000208616257,
+       128.9999932050705
+      ]
+     },
+     "6": {
+      "center_mm": [
+       19.999999552965164,
+       -80.4671049118042,
+       128.49999964237213
+      ],
+      "edge_lengths_mm": [
+       48.00000041723251,
+       24.000000208616257,
+       128.9999932050705
+      ]
+     },
+     "7": {
+      "center_mm": [
+       -19.999999552965164,
+       76.29968225955963,
+       128.49999964237213
+      ],
+      "edge_lengths_mm": [
+       48.00000041723251,
+       24.000000208616257,
+       128.9999932050705
+      ]
+     },
+     "8": {
+      "center_mm": [
+       -19.999999552965164,
+       -82.43584632873535,
+       128.49999964237213
+      ],
+      "edge_lengths_mm": [
+       48.00000041723251,
+       24.000000208616257,
+       128.9999932050705
+      ]
+     },
+     "9": {
+      "center_mm": [
+       -19.999999552965164,
+       -10.819859802722931,
+       73.49999994039536
+      ],
+      "edge_lengths_mm": [
+       36.400001496076584,
+       28.00000086426735,
+       19.00000125169754
+      ]
+     }
+    },
+    "latent": {
+     "0": {
+      "center_mm": [
+       39.99999910593033,
+       79.99999821186066,
+       28.00000086426735
+      ],
+      "edge_lengths_mm": [
+       28.00000086426735,
+       28.00000086426735,
+       56.0000017285347
+      ]
+     },
+     "1": {
+      "center_mm": [
+       39.99999910593033,
+       -79.99999821186066,
+       28.00000086426735
+      ],
+      "edge_lengths_mm": [
+       28.00000086426735,
+       28.00000086426735,
+       56.0000017285347
+      ]
+     },
+     "2": {
+      "center_mm": [
+       -39.99999910593033,
+       79.99999821186066,
+       28.00000086426735
+      ],
+      "edge_lengths_mm": [
+       28.00000086426735,
+       28.00000086426735,
+       56.0000017285347
+      ]
+     },
+     "3": {
+      "center_mm": [
+       -39.99999910593033,
+       -79.99999821186066,
+       28.00000086426735
+      ],
+      "edge_lengths_mm": [
+       28.00000086426735,
+       28.00000086426735,
+       56.0000017285347
+      ]
+     },
+     "4": {
+      "center_mm": [
+       0.0,
+       0.0,
+       60.00000238418579
+      ],
+      "edge_lengths_mm": [
+       100.00000149011612,
+       200.00000298023224,
+       8.00000037997961
+      ]
+     },
+     "5": {
+      "center_mm": [
+       22.16288074851036,
+       86.83589845895767,
+       73.23644310235977
+      ],
+      "edge_lengths_mm": [
+       62.210679054260254,
+       31.638316810131073,
+       18.472887575626373
+      ]
+     },
+     "6": {
+      "center_mm": [
+       19.999999552965164,
+       -90.4298722743988,
+       72.04900681972504
+      ],
+      "edge_lengths_mm": [
+       62.19569966197014,
+       31.242236495018005,
+       16.098007559776306
+      ]
+     },
+     "7": {
+      "center_mm": [
+       -29.8716239631176,
+       91.50829166173935,
+       72.32486456632614
+      ],
+      "edge_lengths_mm": [
+       60.00373139977455,
+       31.560927629470825,
+       16.649726778268814
+      ]
+     },
+     "8": {
+      "center_mm": [
+       -25.725701823830605,
+       -88.66986632347107,
+       73.15398752689362
+      ],
+      "edge_lengths_mm": [
+       62.21022084355354,
+       31.634047627449036,
+       18.30797642469406
+      ]
+     },
+     "9": {
+      "center_mm": [
+       0.434424786362797,
+       0.030662609788123518,
+       73.64990562200546
+      ],
+      "edge_lengths_mm": [
+       36.73211485147476,
+       36.467522382736206,
+       19.299808889627457
+      ]
+     }
+    }
+   },
+   "pairs": [
+    {
+     "pair_id": "0-4",
+     "parent": 0,
+     "child": 4,
+     "contact_face_code": 4,
+     "contact_axis": 2,
+     "raw": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 24.0,
+      "thickness_mm": 8.0,
+      "analytical_ok": true,
+      "p_feasible": 0.9999837875366211,
+      "gnn_overlap_mm": 22.973114624619484,
+      "gnn_thickness_mm": 8.369490504264832,
+      "gnn_ok": true,
+      "bluff": false
+     },
+     "initial": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 24.00000089406967,
+      "thickness_mm": 8.0,
+      "analytical_ok": true,
+      "p_feasible": 0.9999837875366211,
+      "gnn_overlap_mm": 22.973114624619484,
+      "gnn_thickness_mm": 8.369490504264832,
+      "gnn_ok": true,
+      "bluff": false
+     },
+     "initial_p_feasible_param": 0.9999418258666992,
+     "initial_p_feasible_latent": 0.9999837875366211,
+     "param": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 24.000002071261406,
+      "thickness_mm": 8.00000037997961,
+      "analytical_ok": true,
+      "p_feasible": 0.9999418258666992,
+      "gnn_overlap_mm": 22.483257576823235,
+      "gnn_thickness_mm": 10.121248662471771,
+      "gnn_ok": true,
+      "bluff": false
+     },
+     "latent": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 24.000002071261406,
+      "thickness_mm": 8.00000037997961,
+      "analytical_ok": true,
+      "p_feasible": 0.9999837875366211,
+      "gnn_overlap_mm": 22.97312580049038,
+      "gnn_thickness_mm": 8.369490504264832,
+      "gnn_ok": true,
+      "bluff": false
+     }
+    },
+    {
+     "pair_id": "1-4",
+     "parent": 1,
+     "child": 4,
+     "contact_face_code": 4,
+     "contact_axis": 2,
+     "raw": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 24.0,
+      "thickness_mm": 8.0,
+      "analytical_ok": true,
+      "p_feasible": 0.9999839067459106,
+      "gnn_overlap_mm": 22.757502272725105,
+      "gnn_thickness_mm": 8.380703628063202,
+      "gnn_ok": true,
+      "bluff": false
+     },
+     "initial": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 24.00000089406967,
+      "thickness_mm": 8.0,
+      "analytical_ok": true,
+      "p_feasible": 0.9999839067459106,
+      "gnn_overlap_mm": 22.757502272725105,
+      "gnn_thickness_mm": 8.380703628063202,
+      "gnn_ok": true,
+      "bluff": false
+     },
+     "initial_p_feasible_param": 0.9999401569366455,
+     "initial_p_feasible_latent": 0.9999839067459106,
+     "param": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 24.000002071261406,
+      "thickness_mm": 8.00000037997961,
+      "analytical_ok": true,
+      "p_feasible": 0.9999401569366455,
+      "gnn_overlap_mm": 22.445615381002426,
+      "gnn_thickness_mm": 10.135859251022339,
+      "gnn_ok": true,
+      "bluff": false
+     },
+     "latent": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 24.000002071261406,
+      "thickness_mm": 8.00000037997961,
+      "analytical_ok": true,
+      "p_feasible": 0.9999839067459106,
+      "gnn_overlap_mm": 22.757502272725105,
+      "gnn_thickness_mm": 8.380696177482605,
+      "gnn_ok": true,
+      "bluff": false
+     }
+    },
+    {
+     "pair_id": "2-4",
+     "parent": 2,
+     "child": 4,
+     "contact_face_code": 4,
+     "contact_axis": 2,
+     "raw": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 24.0,
+      "thickness_mm": 8.0,
+      "analytical_ok": true,
+      "p_feasible": 0.9999834299087524,
+      "gnn_overlap_mm": 22.93986640870571,
+      "gnn_thickness_mm": 8.378908038139343,
+      "gnn_ok": true,
+      "bluff": false
+     },
+     "initial": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 24.00000089406967,
+      "thickness_mm": 8.0,
+      "analytical_ok": true,
+      "p_feasible": 0.9999834299087524,
+      "gnn_overlap_mm": 22.93986640870571,
+      "gnn_thickness_mm": 8.378908038139343,
+      "gnn_ok": true,
+      "bluff": false
+     },
+     "initial_p_feasible_param": 0.9999409914016724,
+     "initial_p_feasible_latent": 0.9999834299087524,
+     "param": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 24.000002071261406,
+      "thickness_mm": 8.00000037997961,
+      "analytical_ok": true,
+      "p_feasible": 0.9999409914016724,
+      "gnn_overlap_mm": 22.441117092967033,
+      "gnn_thickness_mm": 10.100938379764557,
+      "gnn_ok": true,
+      "bluff": false
+     },
+     "latent": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 24.000002071261406,
+      "thickness_mm": 8.00000037997961,
+      "analytical_ok": true,
+      "p_feasible": 0.9999834299087524,
+      "gnn_overlap_mm": 22.93984964489937,
+      "gnn_thickness_mm": 8.378900587558746,
+      "gnn_ok": true,
+      "bluff": false
+     }
+    },
+    {
+     "pair_id": "3-4",
+     "parent": 3,
+     "child": 4,
+     "contact_face_code": 4,
+     "contact_axis": 2,
+     "raw": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 24.0,
+      "thickness_mm": 8.0,
+      "analytical_ok": true,
+      "p_feasible": 0.9999833106994629,
+      "gnn_overlap_mm": 22.727839648723602,
+      "gnn_thickness_mm": 8.393637835979462,
+      "gnn_ok": true,
+      "bluff": false
+     },
+     "initial": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 24.00000089406967,
+      "thickness_mm": 8.0,
+      "analytical_ok": true,
+      "p_feasible": 0.9999833106994629,
+      "gnn_overlap_mm": 22.727839648723602,
+      "gnn_thickness_mm": 8.393637835979462,
+      "gnn_ok": true,
+      "bluff": false
+     },
+     "initial_p_feasible_param": 0.9999383687973022,
+     "initial_p_feasible_latent": 0.9999833106994629,
+     "param": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 24.000002071261406,
+      "thickness_mm": 8.00000037997961,
+      "analytical_ok": true,
+      "p_feasible": 0.9999383687973022,
+      "gnn_overlap_mm": 22.397780790925026,
+      "gnn_thickness_mm": 10.142073035240173,
+      "gnn_ok": true,
+      "bluff": false
+     },
+     "latent": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 24.000002071261406,
+      "thickness_mm": 8.00000037997961,
+      "analytical_ok": true,
+      "p_feasible": 0.9999833106994629,
+      "gnn_overlap_mm": 22.727839648723602,
+      "gnn_thickness_mm": 8.393652737140656,
+      "gnn_ok": true,
+      "bluff": false
+     }
+    },
+    {
+     "pair_id": "4-5",
+     "parent": 4,
+     "child": 5,
+     "contact_face_code": 4,
+     "contact_axis": 2,
+     "raw": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 23.999999999999993,
+      "thickness_mm": 100.0,
+      "analytical_ok": false,
+      "p_feasible": 1.4939001424796317e-11,
+      "gnn_overlap_mm": 20.495587959885597,
+      "gnn_thickness_mm": 89.204803109169,
+      "gnn_ok": false,
+      "bluff": false
+     },
+     "initial": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 23.999999999999993,
+      "thickness_mm": 100.0,
+      "analytical_ok": false,
+      "p_feasible": 1.4939001424796317e-11,
+      "gnn_overlap_mm": 20.495587959885597,
+      "gnn_thickness_mm": 89.204803109169,
+      "gnn_ok": false,
+      "bluff": false
+     },
+     "initial_p_feasible_param": 8.005473262073792e-08,
+     "initial_p_feasible_latent": 1.4939001424796317e-11,
+     "param": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 24.000000208616257,
+      "thickness_mm": 128.9999932050705,
+      "analytical_ok": false,
+      "p_feasible": 2.5181909335536545e-10,
+      "gnn_overlap_mm": 27.576912194490433,
+      "gnn_thickness_mm": 123.28237295150757,
+      "gnn_ok": false,
+      "bluff": false
+     },
+     "latent": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 28.983261436223984,
+      "thickness_mm": 18.472887575626373,
+      "analytical_ok": true,
+      "p_feasible": 0.9168195128440857,
+      "gnn_overlap_mm": 16.676107421517372,
+      "gnn_thickness_mm": 18.75818520784378,
+      "gnn_ok": true,
+      "bluff": false
+     }
+    },
+    {
+     "pair_id": "4-6",
+     "parent": 4,
+     "child": 6,
+     "contact_face_code": 4,
+     "contact_axis": 2,
+     "raw": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 23.999999999999993,
+      "thickness_mm": 100.0,
+      "analytical_ok": false,
+      "p_feasible": 1.7603552296407976e-11,
+      "gnn_overlap_mm": 20.45019157230854,
+      "gnn_thickness_mm": 89.03564512729645,
+      "gnn_ok": false,
+      "bluff": false
+     },
+     "initial": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 23.999999999999993,
+      "thickness_mm": 100.0,
+      "analytical_ok": false,
+      "p_feasible": 1.7603552296407976e-11,
+      "gnn_overlap_mm": 20.45019157230854,
+      "gnn_thickness_mm": 89.03564512729645,
+      "gnn_ok": false,
+      "bluff": false
+     },
+     "initial_p_feasible_param": 1.0739348255128789e-07,
+     "initial_p_feasible_latent": 1.7603552296407976e-11,
+     "param": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 24.000000208616257,
+      "thickness_mm": 128.9999932050705,
+      "analytical_ok": false,
+      "p_feasible": 1.3709386958993264e-09,
+      "gnn_overlap_mm": 25.873778387904167,
+      "gnn_thickness_mm": 120.31778693199158,
+      "gnn_ok": false,
+      "bluff": false
+     },
+     "latent": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 25.19124746322632,
+      "thickness_mm": 16.098007559776306,
+      "analytical_ok": true,
+      "p_feasible": 0.9675499796867371,
+      "gnn_overlap_mm": 14.571153558790684,
+      "gnn_thickness_mm": 17.55009964108467,
+      "gnn_ok": true,
+      "bluff": false
+     }
+    },
+    {
+     "pair_id": "4-7",
+     "parent": 4,
+     "child": 7,
+     "contact_face_code": 4,
+     "contact_axis": 2,
+     "raw": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 23.999999999999993,
+      "thickness_mm": 100.0,
+      "analytical_ok": false,
+      "p_feasible": 1.53037443828552e-11,
+      "gnn_overlap_mm": 20.511964336037636,
+      "gnn_thickness_mm": 89.16063606739044,
+      "gnn_ok": false,
+      "bluff": false
+     },
+     "initial": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 23.999999999999993,
+      "thickness_mm": 100.0,
+      "analytical_ok": false,
+      "p_feasible": 1.53037443828552e-11,
+      "gnn_overlap_mm": 20.511964336037636,
+      "gnn_thickness_mm": 89.16063606739044,
+      "gnn_ok": false,
+      "bluff": false
+     },
+     "initial_p_feasible_param": 8.722189903664912e-08,
+     "initial_p_feasible_latent": 1.53037443828552e-11,
+     "param": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 24.000000208616257,
+      "thickness_mm": 128.9999932050705,
+      "analytical_ok": false,
+      "p_feasible": 4.842344303312984e-10,
+      "gnn_overlap_mm": 26.87275968492031,
+      "gnn_thickness_mm": 122.54064530134201,
+      "gnn_ok": false,
+      "bluff": false
+     },
+     "latent": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 24.272173643112183,
+      "thickness_mm": 16.649726778268814,
+      "analytical_ok": true,
+      "p_feasible": 0.9546073079109192,
+      "gnn_overlap_mm": 14.866010285913944,
+      "gnn_thickness_mm": 18.463145941495895,
+      "gnn_ok": true,
+      "bluff": false
+     }
+    },
+    {
+     "pair_id": "4-8",
+     "parent": 4,
+     "child": 8,
+     "contact_face_code": 4,
+     "contact_axis": 2,
+     "raw": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 23.999999999999993,
+      "thickness_mm": 100.0,
+      "analytical_ok": false,
+      "p_feasible": 1.7949725039656528e-11,
+      "gnn_overlap_mm": 20.466037094593048,
+      "gnn_thickness_mm": 88.9957845211029,
+      "gnn_ok": false,
+      "bluff": false
+     },
+     "initial": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 23.999999999999993,
+      "thickness_mm": 100.0,
+      "analytical_ok": false,
+      "p_feasible": 1.7949725039656528e-11,
+      "gnn_overlap_mm": 20.466037094593048,
+      "gnn_thickness_mm": 88.9957845211029,
+      "gnn_ok": false,
+      "bluff": false
+     },
+     "initial_p_feasible_param": 1.0700886576842095e-07,
+     "initial_p_feasible_latent": 1.7949725039656528e-11,
+     "param": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 24.000000208616257,
+      "thickness_mm": 128.9999932050705,
+      "analytical_ok": false,
+      "p_feasible": 2.0291790470139404e-09,
+      "gnn_overlap_mm": 25.32842755317688,
+      "gnn_thickness_mm": 119.01909112930298,
+      "gnn_ok": false,
+      "bluff": false
+     },
+     "latent": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 27.147158980369568,
+      "thickness_mm": 18.30797642469406,
+      "analytical_ok": true,
+      "p_feasible": 0.9166666269302368,
+      "gnn_overlap_mm": 15.94322919845581,
+      "gnn_thickness_mm": 19.238222390413284,
+      "gnn_ok": true,
+      "bluff": false
+     }
+    },
+    {
+     "pair_id": "4-9",
+     "parent": 4,
+     "child": 9,
+     "contact_face_code": 4,
+     "contact_axis": 2,
+     "raw": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 28.0,
+      "thickness_mm": 200.0,
+      "analytical_ok": false,
+      "p_feasible": 2.5053719450992257e-24,
+      "gnn_overlap_mm": 15.629580244421959,
+      "gnn_thickness_mm": 168.59708726406097,
+      "gnn_ok": false,
+      "bluff": false
+     },
+     "initial": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 28.0,
+      "thickness_mm": 200.0,
+      "analytical_ok": false,
+      "p_feasible": 2.5053719450992257e-24,
+      "gnn_overlap_mm": 15.629580244421959,
+      "gnn_thickness_mm": 168.59708726406097,
+      "gnn_ok": false,
+      "bluff": false
+     },
+     "initial_p_feasible_param": 1.8042069783035064e-17,
+     "initial_p_feasible_latent": 2.5053719450992257e-24,
+     "param": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 28.00000086426735,
+      "thickness_mm": 19.00000125169754,
+      "analytical_ok": true,
+      "p_feasible": 0.987392246723175,
+      "gnn_overlap_mm": 28.487421572208405,
+      "gnn_thickness_mm": 17.58900284767151,
+      "gnn_ok": true,
+      "bluff": false
+     },
+     "latent": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 36.467522382736206,
+      "thickness_mm": 19.299808889627457,
+      "analytical_ok": true,
+      "p_feasible": 0.9451984763145447,
+      "gnn_overlap_mm": 24.401752278208733,
+      "gnn_thickness_mm": 16.42463356256485,
+      "gnn_ok": true,
+      "bluff": false
+     }
+    }
+   ]
+  },
+  {
+   "design": "chair_candidate_1_retry1",
+   "label": "chair_candidate_1_retry1  (row 0, 8 blocks, 8 joints)",
+   "csv_file": "chair_candidate_1_retry1_ml_input.csv",
+   "row": 0,
+   "n_blocks": 8,
+   "connections": [
+    [
+     0,
+     5
+    ],
+    [
+     1,
+     5
+    ],
+    [
+     2,
+     5
+    ],
+    [
+     3,
+     5
+    ],
+    [
+     4,
+     6
+    ],
+    [
+     4,
+     7
+    ],
+    [
+     5,
+     6
+    ],
+    [
+     5,
+     7
+    ]
+   ],
+   "blocks": {
+    "raw": {
+     "0": {
+      "center_mm": [
+       -35.0,
+       -35.0,
+       50.0
+      ],
+      "edge_lengths_mm": [
+       28.0,
+       28.0,
+       100.0
+      ]
+     },
+     "1": {
+      "center_mm": [
+       35.0,
+       -35.0,
+       50.0
+      ],
+      "edge_lengths_mm": [
+       28.0,
+       28.0,
+       100.0
+      ]
+     },
+     "2": {
+      "center_mm": [
+       -35.0,
+       35.0,
+       50.0
+      ],
+      "edge_lengths_mm": [
+       28.0,
+       28.0,
+       100.0
+      ]
+     },
+     "3": {
+      "center_mm": [
+       35.0,
+       35.0,
+       50.0
+      ],
+      "edge_lengths_mm": [
+       28.0,
+       28.0,
+       100.0
+      ]
+     },
+     "4": {
+      "center_mm": [
+       0.0,
+       35.0,
+       222.0
+      ],
+      "edge_lengths_mm": [
+       100.0,
+       28.0,
+       28.0
+      ]
+     },
+     "5": {
+      "center_mm": [
+       0.0,
+       0.0,
+       104.0
+      ],
+      "edge_lengths_mm": [
+       100.0,
+       100.0,
+       8.0
+      ]
+     },
+     "6": {
+      "center_mm": [
+       -35.0,
+       35.0,
+       158.0
+      ],
+      "edge_lengths_mm": [
+       28.0,
+       28.0,
+       100.0
+      ]
+     },
+     "7": {
+      "center_mm": [
+       35.0,
+       35.0,
+       158.0
+      ],
+      "edge_lengths_mm": [
+       28.0,
+       28.0,
+       100.0
+      ]
+     }
+    },
+    "initial": {
+     "0": {
+      "center_mm": [
+       -35.00000014901161,
+       -35.00000014901161,
+       50.00000074505806
+      ],
+      "edge_lengths_mm": [
+       28.0,
+       28.0,
+       100.0
+      ]
+     },
+     "1": {
+      "center_mm": [
+       35.00000014901161,
+       -35.00000014901161,
+       50.00000074505806
+      ],
+      "edge_lengths_mm": [
+       28.0,
+       28.0,
+       100.0
+      ]
+     },
+     "2": {
+      "center_mm": [
+       -35.00000014901161,
+       35.00000014901161,
+       50.00000074505806
+      ],
+      "edge_lengths_mm": [
+       28.0,
+       28.0,
+       100.0
+      ]
+     },
+     "3": {
+      "center_mm": [
+       35.00000014901161,
+       35.00000014901161,
+       50.00000074505806
+      ],
+      "edge_lengths_mm": [
+       28.0,
+       28.0,
+       100.0
+      ]
+     },
+     "4": {
+      "center_mm": [
+       0.0,
+       35.00000014901161,
+       222.00000286102295
+      ],
+      "edge_lengths_mm": [
+       100.0,
+       28.0,
+       28.0
+      ]
+     },
+     "5": {
+      "center_mm": [
+       0.0,
+       0.0,
+       104.0
+      ],
+      "edge_lengths_mm": [
+       100.0,
+       100.0,
+       8.0
+      ]
+     },
+     "6": {
+      "center_mm": [
+       -35.00000014901161,
+       35.00000014901161,
+       158.00000727176666
+      ],
+      "edge_lengths_mm": [
+       28.0,
+       28.0,
+       100.0
+      ]
+     },
+     "7": {
+      "center_mm": [
+       35.00000014901161,
+       35.00000014901161,
+       158.00000727176666
+      ],
+      "edge_lengths_mm": [
+       28.0,
+       28.0,
+       100.0
+      ]
+     }
+    },
+    "param": {
+     "0": {
+      "center_mm": [
+       -35.00000014901161,
+       -35.00000014901161,
+       50.00000074505806
+      ],
+      "edge_lengths_mm": [
+       28.00000086426735,
+       28.00000086426735,
+       100.00000149011612
+      ]
+     },
+     "1": {
+      "center_mm": [
+       35.00000014901161,
+       -35.00000014901161,
+       50.00000074505806
+      ],
+      "edge_lengths_mm": [
+       28.00000086426735,
+       28.00000086426735,
+       100.00000149011612
+      ]
+     },
+     "2": {
+      "center_mm": [
+       -35.00000014901161,
+       35.00000014901161,
+       50.00000074505806
+      ],
+      "edge_lengths_mm": [
+       28.00000086426735,
+       28.00000086426735,
+       100.00000149011612
+      ]
+     },
+     "3": {
+      "center_mm": [
+       35.00000014901161,
+       35.00000014901161,
+       50.00000074505806
+      ],
+      "edge_lengths_mm": [
+       28.00000086426735,
+       28.00000086426735,
+       100.00000149011612
+      ]
+     },
+     "4": {
+      "center_mm": [
+       1.560125732794404,
+       27.21603214740753,
+       229.51176762580872
+      ],
+      "edge_lengths_mm": [
+       100.00000149011612,
+       23.7831212580204,
+       28.00000086426735
+      ]
+     },
+     "5": {
+      "center_mm": [
+       0.0,
+       0.0,
+       104.00000214576721
+      ],
+      "edge_lengths_mm": [
+       100.00000149011612,
+       100.00000149011612,
+       8.00000037997961
+      ]
+     },
+     "6": {
+      "center_mm": [
+       -18.60257238149643,
+       53.10759320855141,
+       172.49999940395355
+      ],
+      "edge_lengths_mm": [
+       28.00000086426735,
+       28.00000086426735,
+       128.9999932050705
+      ]
+     },
+     "7": {
+      "center_mm": [
+       19.084498286247253,
+       52.356138825416565,
+       172.49999940395355
+      ],
+      "edge_lengths_mm": [
+       28.00000086426735,
+       28.00000086426735,
+       128.9999932050705
+      ]
+     }
+    },
+    "latent": {
+     "0": {
+      "center_mm": [
+       -35.00000014901161,
+       -35.00000014901161,
+       50.00000074505806
+      ],
+      "edge_lengths_mm": [
+       28.00000086426735,
+       28.00000086426735,
+       100.00000149011612
+      ]
+     },
+     "1": {
+      "center_mm": [
+       35.00000014901161,
+       -35.00000014901161,
+       50.00000074505806
+      ],
+      "edge_lengths_mm": [
+       28.00000086426735,
+       28.00000086426735,
+       100.00000149011612
+      ]
+     },
+     "2": {
+      "center_mm": [
+       -35.00000014901161,
+       35.00000014901161,
+       50.00000074505806
+      ],
+      "edge_lengths_mm": [
+       28.00000086426735,
+       28.00000086426735,
+       100.00000149011612
+      ]
+     },
+     "3": {
+      "center_mm": [
+       35.00000014901161,
+       35.00000014901161,
+       50.00000074505806
+      ],
+      "edge_lengths_mm": [
+       28.00000086426735,
+       28.00000086426735,
+       100.00000149011612
+      ]
+     },
+     "4": {
+      "center_mm": [
+       8.113907650113106,
+       36.47651523351669,
+       122.55009263753891
+      ],
+      "edge_lengths_mm": [
+       100.34295171499252,
+       30.956212431192398,
+       11.240330524742603
+      ]
+     },
+     "5": {
+      "center_mm": [
+       0.0,
+       0.0,
+       104.00000214576721
+      ],
+      "edge_lengths_mm": [
+       100.00000149011612,
+       100.00000149011612,
+       8.00000037997961
+      ]
+     },
+     "6": {
+      "center_mm": [
+       -39.236120879650116,
+       20.69411799311638,
+       112.46496438980103
+      ],
+      "edge_lengths_mm": [
+       36.74936294555664,
+       35.200703889131546,
+       8.929922245442867
+      ]
+     },
+     "7": {
+      "center_mm": [
+       39.71625864505768,
+       20.715143531560898,
+       112.4652773141861
+      ],
+      "edge_lengths_mm": [
+       36.74975782632828,
+       35.18039733171463,
+       8.930542506277561
+      ]
+     }
+    }
+   },
+   "pairs": [
+    {
+     "pair_id": "0-5",
+     "parent": 0,
+     "child": 5,
+     "contact_face_code": 4,
+     "contact_axis": 2,
+     "raw": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 27.999999999999996,
+      "thickness_mm": 8.0,
+      "analytical_ok": true,
+      "p_feasible": 0.999983549118042,
+      "gnn_overlap_mm": 16.74303598701954,
+      "gnn_thickness_mm": 9.918242692947388,
+      "gnn_ok": true,
+      "bluff": false
+     },
+     "initial": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 27.999999999999996,
+      "thickness_mm": 8.0,
+      "analytical_ok": true,
+      "p_feasible": 0.999983549118042,
+      "gnn_overlap_mm": 16.74303598701954,
+      "gnn_thickness_mm": 9.918242692947388,
+      "gnn_ok": true,
+      "bluff": false
+     },
+     "initial_p_feasible_param": 0.9381641745567322,
+     "initial_p_feasible_latent": 0.999983549118042,
+     "param": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 28.00000086426735,
+      "thickness_mm": 8.00000037997961,
+      "analytical_ok": true,
+      "p_feasible": 0.9381641745567322,
+      "gnn_overlap_mm": 19.10906657576561,
+      "gnn_thickness_mm": 13.759545981884003,
+      "gnn_ok": true,
+      "bluff": false
+     },
+     "latent": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 28.00000086426735,
+      "thickness_mm": 8.00000037997961,
+      "analytical_ok": true,
+      "p_feasible": 0.999983549118042,
+      "gnn_overlap_mm": 16.74303598701954,
+      "gnn_thickness_mm": 9.918242692947388,
+      "gnn_ok": true,
+      "bluff": false
+     }
+    },
+    {
+     "pair_id": "1-5",
+     "parent": 1,
+     "child": 5,
+     "contact_face_code": 4,
+     "contact_axis": 2,
+     "raw": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 27.999999999999996,
+      "thickness_mm": 8.0,
+      "analytical_ok": true,
+      "p_feasible": 0.9999842643737793,
+      "gnn_overlap_mm": 16.72455295920372,
+      "gnn_thickness_mm": 9.918324649333954,
+      "gnn_ok": true,
+      "bluff": false
+     },
+     "initial": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 27.999999999999996,
+      "thickness_mm": 8.0,
+      "analytical_ok": true,
+      "p_feasible": 0.9999842643737793,
+      "gnn_overlap_mm": 16.72455295920372,
+      "gnn_thickness_mm": 9.918324649333954,
+      "gnn_ok": true,
+      "bluff": false
+     },
+     "initial_p_feasible_param": 0.9391947984695435,
+     "initial_p_feasible_latent": 0.9999842643737793,
+     "param": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 28.00000086426735,
+      "thickness_mm": 8.00000037997961,
+      "analytical_ok": true,
+      "p_feasible": 0.9391947984695435,
+      "gnn_overlap_mm": 19.1117525100708,
+      "gnn_thickness_mm": 13.759002089500427,
+      "gnn_ok": true,
+      "bluff": false
+     },
+     "latent": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 28.00000086426735,
+      "thickness_mm": 8.00000037997961,
+      "analytical_ok": true,
+      "p_feasible": 0.9999842643737793,
+      "gnn_overlap_mm": 16.72455295920372,
+      "gnn_thickness_mm": 9.918324649333954,
+      "gnn_ok": true,
+      "bluff": false
+     }
+    },
+    {
+     "pair_id": "2-5",
+     "parent": 2,
+     "child": 5,
+     "contact_face_code": 4,
+     "contact_axis": 2,
+     "raw": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 27.999999999999996,
+      "thickness_mm": 8.0,
+      "analytical_ok": true,
+      "p_feasible": 0.9999841451644897,
+      "gnn_overlap_mm": 16.75131544470787,
+      "gnn_thickness_mm": 9.910576045513153,
+      "gnn_ok": true,
+      "bluff": false
+     },
+     "initial": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 27.999999999999996,
+      "thickness_mm": 8.0,
+      "analytical_ok": true,
+      "p_feasible": 0.9999841451644897,
+      "gnn_overlap_mm": 16.75131544470787,
+      "gnn_thickness_mm": 9.910576045513153,
+      "gnn_ok": true,
+      "bluff": false
+     },
+     "initial_p_feasible_param": 0.9312316179275513,
+     "initial_p_feasible_latent": 0.9999841451644897,
+     "param": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 28.00000086426735,
+      "thickness_mm": 8.00000037997961,
+      "analytical_ok": true,
+      "p_feasible": 0.9312316179275513,
+      "gnn_overlap_mm": 19.01775412261486,
+      "gnn_thickness_mm": 13.928785920143127,
+      "gnn_ok": true,
+      "bluff": false
+     },
+     "latent": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 28.00000086426735,
+      "thickness_mm": 8.00000037997961,
+      "analytical_ok": true,
+      "p_feasible": 0.9999841451644897,
+      "gnn_overlap_mm": 16.75131544470787,
+      "gnn_thickness_mm": 9.910576045513153,
+      "gnn_ok": true,
+      "bluff": false
+     }
+    },
+    {
+     "pair_id": "3-5",
+     "parent": 3,
+     "child": 5,
+     "contact_face_code": 4,
+     "contact_axis": 2,
+     "raw": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 27.999999999999996,
+      "thickness_mm": 8.0,
+      "analytical_ok": true,
+      "p_feasible": 0.9999845027923584,
+      "gnn_overlap_mm": 16.72724261879921,
+      "gnn_thickness_mm": 9.916909039020538,
+      "gnn_ok": true,
+      "bluff": false
+     },
+     "initial": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 27.999999999999996,
+      "thickness_mm": 8.0,
+      "analytical_ok": true,
+      "p_feasible": 0.9999845027923584,
+      "gnn_overlap_mm": 16.72724261879921,
+      "gnn_thickness_mm": 9.916909039020538,
+      "gnn_ok": true,
+      "bluff": false
+     },
+     "initial_p_feasible_param": 0.9324119091033936,
+     "initial_p_feasible_latent": 0.9999845027923584,
+     "param": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 28.00000086426735,
+      "thickness_mm": 8.00000037997961,
+      "analytical_ok": true,
+      "p_feasible": 0.9324119091033936,
+      "gnn_overlap_mm": 19.0217774361372,
+      "gnn_thickness_mm": 13.928927481174469,
+      "gnn_ok": true,
+      "bluff": false
+     },
+     "latent": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 28.00000086426735,
+      "thickness_mm": 8.00000037997961,
+      "analytical_ok": true,
+      "p_feasible": 0.9999845027923584,
+      "gnn_overlap_mm": 16.72724261879921,
+      "gnn_thickness_mm": 9.916909039020538,
+      "gnn_ok": true,
+      "bluff": false
+     }
+    },
+    {
+     "pair_id": "4-6",
+     "parent": 6,
+     "child": 4,
+     "contact_face_code": 4,
+     "contact_axis": 2,
+     "raw": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 27.999999999999996,
+      "thickness_mm": 28.0,
+      "analytical_ok": false,
+      "p_feasible": 1.496334789408138e-08,
+      "gnn_overlap_mm": 20.373160019516945,
+      "gnn_thickness_mm": 26.838164776563644,
+      "gnn_ok": false,
+      "bluff": false
+     },
+     "initial": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 27.999999999999996,
+      "thickness_mm": 28.0,
+      "analytical_ok": false,
+      "p_feasible": 1.496334789408138e-08,
+      "gnn_overlap_mm": 20.373160019516945,
+      "gnn_thickness_mm": 26.838164776563644,
+      "gnn_ok": false,
+      "bluff": false
+     },
+     "initial_p_feasible_param": 6.055783887859434e-05,
+     "initial_p_feasible_latent": 1.496334789408138e-08,
+     "param": {
+      "contact_face_code": 3,
+      "contact_axis": 1,
+      "overlap_mm": 0.0,
+      "thickness_mm": 28.00000086426735,
+      "analytical_ok": false,
+      "p_feasible": 0.9999927282333374,
+      "gnn_overlap_mm": 17.484646290540695,
+      "gnn_thickness_mm": 17.049383372068405,
+      "gnn_ok": true,
+      "bluff": true
+     },
+     "latent": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 17.296060919761658,
+      "thickness_mm": 11.240330524742603,
+      "analytical_ok": true,
+      "p_feasible": 0.9815260171890259,
+      "gnn_overlap_mm": 16.65763556957245,
+      "gnn_thickness_mm": 15.341266989707947,
+      "gnn_ok": true,
+      "bluff": false
+     }
+    },
+    {
+     "pair_id": "4-7",
+     "parent": 7,
+     "child": 4,
+     "contact_face_code": 4,
+     "contact_axis": 2,
+     "raw": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 27.999999999999996,
+      "thickness_mm": 28.0,
+      "analytical_ok": false,
+      "p_feasible": 1.5246401474655613e-08,
+      "gnn_overlap_mm": 20.525217056274414,
+      "gnn_thickness_mm": 26.858896017074585,
+      "gnn_ok": false,
+      "bluff": false
+     },
+     "initial": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 27.999999999999996,
+      "thickness_mm": 28.0,
+      "analytical_ok": false,
+      "p_feasible": 1.5246401474655613e-08,
+      "gnn_overlap_mm": 20.525217056274414,
+      "gnn_thickness_mm": 26.858896017074585,
+      "gnn_ok": false,
+      "bluff": false
+     },
+     "initial_p_feasible_param": 5.55199476366397e-05,
+     "initial_p_feasible_latent": 1.5246401474655613e-08,
+     "param": {
+      "contact_face_code": 3,
+      "contact_axis": 1,
+      "overlap_mm": 0.7514543831348419,
+      "thickness_mm": 28.00000086426735,
+      "analytical_ok": false,
+      "p_feasible": 0.9999899864196777,
+      "gnn_overlap_mm": 16.446571797132492,
+      "gnn_thickness_mm": 17.203208059072495,
+      "gnn_ok": true,
+      "bluff": true
+     },
+     "latent": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 17.30693317949772,
+      "thickness_mm": 11.240330524742603,
+      "analytical_ok": true,
+      "p_feasible": 0.9977057576179504,
+      "gnn_overlap_mm": 17.93580874800682,
+      "gnn_thickness_mm": 14.002762734889984,
+      "gnn_ok": true,
+      "bluff": false
+     }
+    },
+    {
+     "pair_id": "5-6",
+     "parent": 5,
+     "child": 6,
+     "contact_face_code": 4,
+     "contact_axis": 2,
+     "raw": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 27.999999999999996,
+      "thickness_mm": 100.0,
+      "analytical_ok": false,
+      "p_feasible": 6.77408736743379e-12,
+      "gnn_overlap_mm": 18.723761662840843,
+      "gnn_thickness_mm": 89.61042016744614,
+      "gnn_ok": false,
+      "bluff": false
+     },
+     "initial": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 27.999999999999996,
+      "thickness_mm": 100.0,
+      "analytical_ok": false,
+      "p_feasible": 6.77408736743379e-12,
+      "gnn_overlap_mm": 18.723761662840843,
+      "gnn_thickness_mm": 89.61042016744614,
+      "gnn_ok": false,
+      "bluff": false
+     },
+     "initial_p_feasible_param": 3.010392768398873e-10,
+     "initial_p_feasible_latent": 6.77408736743379e-12,
+     "param": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 10.892407968640327,
+      "thickness_mm": 128.9999932050705,
+      "analytical_ok": false,
+      "p_feasible": 2.951403227716143e-12,
+      "gnn_overlap_mm": 7.3498692363500595,
+      "gnn_thickness_mm": 91.67137742042542,
+      "gnn_ok": false,
+      "bluff": false
+     },
+     "latent": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 29.138561338186264,
+      "thickness_mm": 8.929922245442867,
+      "analytical_ok": true,
+      "p_feasible": 0.9956433773040771,
+      "gnn_overlap_mm": 21.50607481598854,
+      "gnn_thickness_mm": 6.545916199684143,
+      "gnn_ok": true,
+      "bluff": false
+     }
+    },
+    {
+     "pair_id": "5-7",
+     "parent": 5,
+     "child": 7,
+     "contact_face_code": 4,
+     "contact_axis": 2,
+     "raw": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 27.999999999999996,
+      "thickness_mm": 100.0,
+      "analytical_ok": false,
+      "p_feasible": 6.672665458368199e-12,
+      "gnn_overlap_mm": 18.706711009144783,
+      "gnn_thickness_mm": 89.68035876750946,
+      "gnn_ok": false,
+      "bluff": false
+     },
+     "initial": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 27.999999999999996,
+      "thickness_mm": 100.0,
+      "analytical_ok": false,
+      "p_feasible": 6.672665458368199e-12,
+      "gnn_overlap_mm": 18.706711009144783,
+      "gnn_thickness_mm": 89.68035876750946,
+      "gnn_ok": false,
+      "bluff": false
+     },
+     "initial_p_feasible_param": 3.166511497454394e-10,
+     "initial_p_feasible_latent": 6.672665458368199e-12,
+     "param": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 11.64386235177517,
+      "thickness_mm": 128.9999932050705,
+      "analytical_ok": false,
+      "p_feasible": 2.2324171591175945e-12,
+      "gnn_overlap_mm": 7.674563210457563,
+      "gnn_thickness_mm": 92.69024431705475,
+      "gnn_ok": false,
+      "bluff": false
+     },
+     "latent": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 28.65862101316452,
+      "thickness_mm": 8.930542506277561,
+      "analytical_ok": true,
+      "p_feasible": 0.995278000831604,
+      "gnn_overlap_mm": 21.32362127304077,
+      "gnn_thickness_mm": 6.601914763450623,
+      "gnn_ok": true,
+      "bluff": false
+     }
+    }
+   ]
+  },
+  {
+   "design": "dog_candidate_1_retry1",
+   "label": "dog_candidate_1_retry1  (row 0, 6 blocks, 5 joints)",
+   "csv_file": "dog_candidate_1_retry1_ml_input.csv",
+   "row": 0,
+   "n_blocks": 6,
+   "connections": [
+    [
+     0,
+     4
+    ],
+    [
+     1,
+     4
+    ],
+    [
+     2,
+     4
+    ],
+    [
+     3,
+     4
+    ],
+    [
+     4,
+     5
+    ]
+   ],
+   "blocks": {
+    "raw": {
+     "0": {
+      "center_mm": [
+       10.0,
+       80.0,
+       28.0
+      ],
+      "edge_lengths_mm": [
+       28.0,
+       28.0,
+       56.0
+      ]
+     },
+     "1": {
+      "center_mm": [
+       -10.0,
+       80.0,
+       28.0
+      ],
+      "edge_lengths_mm": [
+       28.0,
+       28.0,
+       56.0
+      ]
+     },
+     "2": {
+      "center_mm": [
+       10.0,
+       -80.0,
+       28.0
+      ],
+      "edge_lengths_mm": [
+       28.0,
+       28.0,
+       56.0
+      ]
+     },
+     "3": {
+      "center_mm": [
+       -10.0,
+       -80.0,
+       28.0
+      ],
+      "edge_lengths_mm": [
+       28.0,
+       28.0,
+       56.0
+      ]
+     },
+     "4": {
+      "center_mm": [
+       0.0,
+       0.0,
+       80.0
+      ],
+      "edge_lengths_mm": [
+       24.0,
+       200.0,
+       48.0
+      ]
+     },
+     "5": {
+      "center_mm": [
+       0.0,
+       50.0,
+       128.0
+      ],
+      "edge_lengths_mm": [
+       100.0,
+       24.0,
+       48.0
+      ]
+     }
+    },
+    "initial": {
+     "0": {
+      "center_mm": [
+       12.000000104308128,
+       79.99999821186066,
+       28.00000086426735
+      ],
+      "edge_lengths_mm": [
+       24.0,
+       28.0,
+       56.0
+      ]
+     },
+     "1": {
+      "center_mm": [
+       -12.000000104308128,
+       79.99999821186066,
+       28.00000086426735
+      ],
+      "edge_lengths_mm": [
+       24.0,
+       28.0,
+       56.0
+      ]
+     },
+     "2": {
+      "center_mm": [
+       12.000000104308128,
+       -79.99999821186066,
+       28.00000086426735
+      ],
+      "edge_lengths_mm": [
+       24.0,
+       28.0,
+       56.0
+      ]
+     },
+     "3": {
+      "center_mm": [
+       -12.000000104308128,
+       -79.99999821186066,
+       28.00000086426735
+      ],
+      "edge_lengths_mm": [
+       24.0,
+       28.0,
+       56.0
+      ]
+     },
+     "4": {
+      "center_mm": [
+       0.0,
+       0.0,
+       80.0
+      ],
+      "edge_lengths_mm": [
+       24.0,
+       200.0,
+       48.0
+      ]
+     },
+     "5": {
+      "center_mm": [
+       0.0,
+       50.00000074505806,
+       128.00000607967377
+      ],
+      "edge_lengths_mm": [
+       100.0,
+       24.0,
+       48.0
+      ]
+     }
+    },
+    "param": {
+     "0": {
+      "center_mm": [
+       12.000000104308128,
+       79.99999821186066,
+       28.00000086426735
+      ],
+      "edge_lengths_mm": [
+       24.000000208616257,
+       28.00000086426735,
+       56.0000017285347
+      ]
+     },
+     "1": {
+      "center_mm": [
+       -12.000000104308128,
+       79.99999821186066,
+       28.00000086426735
+      ],
+      "edge_lengths_mm": [
+       24.000000208616257,
+       28.00000086426735,
+       56.0000017285347
+      ]
+     },
+     "2": {
+      "center_mm": [
+       12.000000104308128,
+       -79.99999821186066,
+       28.00000086426735
+      ],
+      "edge_lengths_mm": [
+       24.000000208616257,
+       28.00000086426735,
+       56.0000017285347
+      ]
+     },
+     "3": {
+      "center_mm": [
+       -12.000000104308128,
+       -79.99999821186066,
+       28.00000086426735
+      ],
+      "edge_lengths_mm": [
+       24.000000208616257,
+       28.00000086426735,
+       56.0000017285347
+      ]
+     },
+     "4": {
+      "center_mm": [
+       0.9705490665510297,
+       9.119277819991112,
+       64.77261334657669
+      ],
+      "edge_lengths_mm": [
+       24.000000208616257,
+       200.79132914543152,
+       17.545223236083984
+      ]
+     },
+     "5": {
+      "center_mm": [
+       -0.8120017009787261,
+       70.00000029802322,
+       78.46816629171371
+      ],
+      "edge_lengths_mm": [
+       100.00000149011612,
+       24.000000208616257,
+       9.845884516835213
+      ]
+     }
+    },
+    "latent": {
+     "0": {
+      "center_mm": [
+       12.000000104308128,
+       79.99999821186066,
+       28.00000086426735
+      ],
+      "edge_lengths_mm": [
+       24.000000208616257,
+       28.00000086426735,
+       56.0000017285347
+      ]
+     },
+     "1": {
+      "center_mm": [
+       -12.000000104308128,
+       79.99999821186066,
+       28.00000086426735
+      ],
+      "edge_lengths_mm": [
+       24.000000208616257,
+       28.00000086426735,
+       56.0000017285347
+      ]
+     },
+     "2": {
+      "center_mm": [
+       12.000000104308128,
+       -79.99999821186066,
+       28.00000086426735
+      ],
+      "edge_lengths_mm": [
+       24.000000208616257,
+       28.00000086426735,
+       56.0000017285347
+      ]
+     },
+     "3": {
+      "center_mm": [
+       -12.000000104308128,
+       -79.99999821186066,
+       28.00000086426735
+      ],
+      "edge_lengths_mm": [
+       24.000000208616257,
+       28.00000086426735,
+       56.0000017285347
+      ]
+     },
+     "4": {
+      "center_mm": [
+       12.193277478218079,
+       19.999999552965164,
+       84.27193015813828
+      ],
+      "edge_lengths_mm": [
+       22.53185398876667,
+       205.6119292974472,
+       56.54385685920715
+      ]
+     },
+     "5": {
+      "center_mm": [
+       16.65305905044079,
+       70.00000029802322,
+       118.73111128807068
+      ],
+      "edge_lengths_mm": [
+       100.73769837617874,
+       31.48737922310829,
+       12.374511919915676
+      ]
+     }
+    }
+   },
+   "pairs": [
+    {
+     "pair_id": "0-4",
+     "parent": 0,
+     "child": 4,
+     "contact_face_code": 4,
+     "contact_axis": 2,
+     "raw": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 16.0,
+      "thickness_mm": 48.0,
+      "analytical_ok": false,
+      "p_feasible": 4.170053737132537e-15,
+      "gnn_overlap_mm": 15.738192945718765,
+      "gnn_thickness_mm": 48.634596168994904,
+      "gnn_ok": false,
+      "bluff": false
+     },
+     "initial": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 11.999999895691872,
+      "thickness_mm": 48.0,
+      "analytical_ok": false,
+      "p_feasible": 1.7730013183797026e-15,
+      "gnn_overlap_mm": 14.453033916652203,
+      "gnn_thickness_mm": 48.39440435171127,
+      "gnn_ok": false,
+      "bluff": false
+     },
+     "initial_p_feasible_param": 0.0002825443516485393,
+     "initial_p_feasible_latent": 1.7730013183797026e-15,
+     "param": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 12.970549170859158,
+      "thickness_mm": 17.545223236083984,
+      "analytical_ok": true,
+      "p_feasible": 0.9770708084106445,
+      "gnn_overlap_mm": 20.540254190564156,
+      "gnn_thickness_mm": 19.360695034265518,
+      "gnn_ok": true,
+      "bluff": false
+     },
+     "latent": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 22.53185398876667,
+      "thickness_mm": 56.54385685920715,
+      "analytical_ok": false,
+      "p_feasible": 7.005479096128253e-13,
+      "gnn_overlap_mm": 15.561536885797977,
+      "gnn_thickness_mm": 55.967070162296295,
+      "gnn_ok": false,
+      "bluff": false
+     }
+    },
+    {
+     "pair_id": "1-4",
+     "parent": 1,
+     "child": 4,
+     "contact_face_code": 4,
+     "contact_axis": 2,
+     "raw": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 16.0,
+      "thickness_mm": 48.0,
+      "analytical_ok": false,
+      "p_feasible": 4.223105951717916e-15,
+      "gnn_overlap_mm": 15.731766819953918,
+      "gnn_thickness_mm": 48.61387610435486,
+      "gnn_ok": false,
+      "bluff": false
+     },
+     "initial": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 11.999999895691872,
+      "thickness_mm": 48.0,
+      "analytical_ok": false,
+      "p_feasible": 1.8248079710161437e-15,
+      "gnn_overlap_mm": 14.45863489061594,
+      "gnn_thickness_mm": 48.37685078382492,
+      "gnn_ok": false,
+      "bluff": false
+     },
+     "initial_p_feasible_param": 0.0002847187570296228,
+     "initial_p_feasible_latent": 1.8248079710161437e-15,
+     "param": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 11.029451037757099,
+      "thickness_mm": 17.545223236083984,
+      "analytical_ok": true,
+      "p_feasible": 0.9758386015892029,
+      "gnn_overlap_mm": 20.40334790945053,
+      "gnn_thickness_mm": 19.35650035738945,
+      "gnn_ok": true,
+      "bluff": false
+     },
+     "latent": {
+      "contact_face_code": 0,
+      "contact_axis": 0,
+      "overlap_mm": 0.0,
+      "thickness_mm": 56.54385685920715,
+      "analytical_ok": false,
+      "p_feasible": 9.294536999451168e-16,
+      "gnn_overlap_mm": 9.811201132833958,
+      "gnn_thickness_mm": 55.27431517839432,
+      "gnn_ok": false,
+      "bluff": false
+     }
+    },
+    {
+     "pair_id": "2-4",
+     "parent": 2,
+     "child": 4,
+     "contact_face_code": 4,
+     "contact_axis": 2,
+     "raw": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 16.0,
+      "thickness_mm": 48.0,
+      "analytical_ok": false,
+      "p_feasible": 4.676388857177477e-15,
+      "gnn_overlap_mm": 15.763120725750923,
+      "gnn_thickness_mm": 48.644132912158966,
+      "gnn_ok": false,
+      "bluff": false
+     },
+     "initial": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 11.999999895691872,
+      "thickness_mm": 48.0,
+      "analytical_ok": false,
+      "p_feasible": 2.0701855807809524e-15,
+      "gnn_overlap_mm": 14.498407952487469,
+      "gnn_thickness_mm": 48.401571810245514,
+      "gnn_ok": false,
+      "bluff": false
+     },
+     "initial_p_feasible_param": 0.00021811223996337503,
+     "initial_p_feasible_latent": 2.0701855807809524e-15,
+     "param": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 12.970549170859158,
+      "thickness_mm": 17.545223236083984,
+      "analytical_ok": true,
+      "p_feasible": 0.9736769795417786,
+      "gnn_overlap_mm": 16.385572031140327,
+      "gnn_thickness_mm": 23.261960595846176,
+      "gnn_ok": false,
+      "bluff": false
+     },
+     "latent": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 16.805967316031456,
+      "thickness_mm": 56.54385685920715,
+      "analytical_ok": false,
+      "p_feasible": 2.9828789720361126e-13,
+      "gnn_overlap_mm": 13.467160053551197,
+      "gnn_thickness_mm": 54.732948541641235,
+      "gnn_ok": false,
+      "bluff": false
+     }
+    },
+    {
+     "pair_id": "3-4",
+     "parent": 3,
+     "child": 4,
+     "contact_face_code": 4,
+     "contact_axis": 2,
+     "raw": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 16.0,
+      "thickness_mm": 48.0,
+      "analytical_ok": false,
+      "p_feasible": 4.793316673348249e-15,
+      "gnn_overlap_mm": 15.759436413645744,
+      "gnn_thickness_mm": 48.61491173505783,
+      "gnn_ok": false,
+      "bluff": false
+     },
+     "initial": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 11.999999895691872,
+      "thickness_mm": 48.0,
+      "analytical_ok": false,
+      "p_feasible": 2.1320823016433236e-15,
+      "gnn_overlap_mm": 14.495550654828548,
+      "gnn_thickness_mm": 48.36772382259369,
+      "gnn_ok": false,
+      "bluff": false
+     },
+     "initial_p_feasible_param": 0.00021759442461188883,
+     "initial_p_feasible_latent": 2.1320823016433236e-15,
+     "param": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 11.029451037757099,
+      "thickness_mm": 17.545223236083984,
+      "analytical_ok": true,
+      "p_feasible": 0.9722933769226074,
+      "gnn_overlap_mm": 16.27010852098465,
+      "gnn_thickness_mm": 23.168954998254776,
+      "gnn_ok": false,
+      "bluff": false
+     },
+     "latent": {
+      "contact_face_code": 0,
+      "contact_axis": 0,
+      "overlap_mm": 0.0,
+      "thickness_mm": 56.54385685920715,
+      "analytical_ok": false,
+      "p_feasible": 2.9073491118920824e-15,
+      "gnn_overlap_mm": 10.143225081264973,
+      "gnn_thickness_mm": 53.77982556819916,
+      "gnn_ok": false,
+      "bluff": false
+     }
+    },
+    {
+     "pair_id": "4-5",
+     "parent": 4,
+     "child": 5,
+     "contact_face_code": 4,
+     "contact_axis": 2,
+     "raw": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 23.999999999999993,
+      "thickness_mm": 48.0,
+      "analytical_ok": false,
+      "p_feasible": 1.375373592793494e-08,
+      "gnn_overlap_mm": 22.37883396446705,
+      "gnn_thickness_mm": 46.962469816207886,
+      "gnn_ok": false,
+      "bluff": false
+     },
+     "initial": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 23.999999999999993,
+      "thickness_mm": 48.0,
+      "analytical_ok": false,
+      "p_feasible": 1.375373592793494e-08,
+      "gnn_overlap_mm": 22.37883396446705,
+      "gnn_thickness_mm": 46.962469816207886,
+      "gnn_ok": false,
+      "bluff": false
+     },
+     "initial_p_feasible_param": 7.148901204345748e-08,
+     "initial_p_feasible_latent": 1.375373592793494e-08,
+     "param": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 24.000000208616257,
+      "thickness_mm": 9.845884516835213,
+      "analytical_ok": true,
+      "p_feasible": 0.9954256415367126,
+      "gnn_overlap_mm": 15.827324241399765,
+      "gnn_thickness_mm": 11.170066893100739,
+      "gnn_ok": true,
+      "bluff": false
+     },
+     "latent": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 22.53185398876667,
+      "thickness_mm": 12.374511919915676,
+      "analytical_ok": true,
+      "p_feasible": 0.997779905796051,
+      "gnn_overlap_mm": 20.395930856466293,
+      "gnn_thickness_mm": 14.022164046764374,
+      "gnn_ok": true,
+      "bluff": false
+     }
+    }
+   ]
+  },
+  {
+   "design": "eiffeltower_candidate_4_retry101",
+   "label": "eiffeltower_candidate_4_retry101  (row 0, 11 blocks, 13 joints)",
+   "csv_file": "eiffeltower_candidate_4_retry101_ml_input.csv",
+   "row": 0,
+   "n_blocks": 11,
+   "connections": [
+    [
+     0,
+     9
+    ],
+    [
+     1,
+     9
+    ],
+    [
+     2,
+     9
+    ],
+    [
+     3,
+     9
+    ],
+    [
+     4,
+     9
+    ],
+    [
+     4,
+     10
+    ],
+    [
+     5,
+     9
+    ],
+    [
+     5,
+     10
+    ],
+    [
+     6,
+     9
+    ],
+    [
+     6,
+     10
+    ],
+    [
+     7,
+     9
+    ],
+    [
+     7,
+     10
+    ],
+    [
+     8,
+     10
+    ]
+   ],
+   "blocks": {
+    "raw": {
+     "0": {
+      "center_mm": [
+       40.0,
+       60.0,
+       50.0
+      ],
+      "edge_lengths_mm": [
+       28.0,
+       28.0,
+       100.0
+      ]
+     },
+     "1": {
+      "center_mm": [
+       40.0,
+       -60.0,
+       50.0
+      ],
+      "edge_lengths_mm": [
+       28.0,
+       28.0,
+       100.0
+      ]
+     },
+     "2": {
+      "center_mm": [
+       -40.0,
+       60.0,
+       50.0
+      ],
+      "edge_lengths_mm": [
+       28.0,
+       28.0,
+       100.0
+      ]
+     },
+     "3": {
+      "center_mm": [
+       -40.0,
+       -60.0,
+       50.0
+      ],
+      "edge_lengths_mm": [
+       28.0,
+       28.0,
+       100.0
+      ]
+     },
+     "4": {
+      "center_mm": [
+       35.0,
+       35.0,
+       158.0
+      ],
+      "edge_lengths_mm": [
+       28.0,
+       28.0,
+       100.0
+      ]
+     },
+     "5": {
+      "center_mm": [
+       35.0,
+       -35.0,
+       158.0
+      ],
+      "edge_lengths_mm": [
+       28.0,
+       28.0,
+       100.0
+      ]
+     },
+     "6": {
+      "center_mm": [
+       -35.0,
+       35.0,
+       158.0
+      ],
+      "edge_lengths_mm": [
+       28.0,
+       28.0,
+       100.0
+      ]
+     },
+     "7": {
+      "center_mm": [
+       -35.0,
+       -35.0,
+       158.0
+      ],
+      "edge_lengths_mm": [
+       28.0,
+       28.0,
+       100.0
+      ]
+     },
+     "8": {
+      "center_mm": [
+       0.0,
+       0.0,
+       266.0
+      ],
+      "edge_lengths_mm": [
+       28.0,
+       28.0,
+       100.0
+      ]
+     },
+     "9": {
+      "center_mm": [
+       0.0,
+       0.0,
+       104.0
+      ],
+      "edge_lengths_mm": [
+       100.0,
+       200.0,
+       8.0
+      ]
+     },
+     "10": {
+      "center_mm": [
+       0.0,
+       0.0,
+       212.0
+      ],
+      "edge_lengths_mm": [
+       100.0,
+       100.0,
+       8.0
+      ]
+     }
+    },
+    "initial": {
+     "0": {
+      "center_mm": [
+       39.99999910593033,
+       59.99999865889549,
+       50.00000074505806
+      ],
+      "edge_lengths_mm": [
+       28.0,
+       28.0,
+       100.0
+      ]
+     },
+     "1": {
+      "center_mm": [
+       39.99999910593033,
+       -59.99999865889549,
+       50.00000074505806
+      ],
+      "edge_lengths_mm": [
+       28.0,
+       28.0,
+       100.0
+      ]
+     },
+     "2": {
+      "center_mm": [
+       -39.99999910593033,
+       59.99999865889549,
+       50.00000074505806
+      ],
+      "edge_lengths_mm": [
+       28.0,
+       28.0,
+       100.0
+      ]
+     },
+     "3": {
+      "center_mm": [
+       -39.99999910593033,
+       -59.99999865889549,
+       50.00000074505806
+      ],
+      "edge_lengths_mm": [
+       28.0,
+       28.0,
+       100.0
+      ]
+     },
+     "4": {
+      "center_mm": [
+       35.00000014901161,
+       35.00000014901161,
+       158.00000727176666
+      ],
+      "edge_lengths_mm": [
+       28.0,
+       28.0,
+       100.0
+      ]
+     },
+     "5": {
+      "center_mm": [
+       35.00000014901161,
+       -35.00000014901161,
+       158.00000727176666
+      ],
+      "edge_lengths_mm": [
+       28.0,
+       28.0,
+       100.0
+      ]
+     },
+     "6": {
+      "center_mm": [
+       -35.00000014901161,
+       35.00000014901161,
+       158.00000727176666
+      ],
+      "edge_lengths_mm": [
+       28.0,
+       28.0,
+       100.0
+      ]
+     },
+     "7": {
+      "center_mm": [
+       -35.00000014901161,
+       -35.00000014901161,
+       158.00000727176666
+      ],
+      "edge_lengths_mm": [
+       28.0,
+       28.0,
+       100.0
+      ]
+     },
+     "8": {
+      "center_mm": [
+       0.0,
+       0.0,
+       266.00000262260437
+      ],
+      "edge_lengths_mm": [
+       28.0,
+       28.0,
+       100.0
+      ]
+     },
+     "9": {
+      "center_mm": [
+       0.0,
+       0.0,
+       104.0
+      ],
+      "edge_lengths_mm": [
+       100.0,
+       200.0,
+       8.0
+      ]
+     },
+     "10": {
+      "center_mm": [
+       0.0,
+       0.0,
+       212.0000123977661
+      ],
+      "edge_lengths_mm": [
+       100.0,
+       100.0,
+       8.0
+      ]
+     }
+    },
+    "param": {
+     "0": {
+      "center_mm": [
+       39.99999910593033,
+       59.99999865889549,
+       50.00000074505806
+      ],
+      "edge_lengths_mm": [
+       28.00000086426735,
+       28.00000086426735,
+       100.00000149011612
+      ]
+     },
+     "1": {
+      "center_mm": [
+       39.99999910593033,
+       -59.99999865889549,
+       50.00000074505806
+      ],
+      "edge_lengths_mm": [
+       28.00000086426735,
+       28.00000086426735,
+       100.00000149011612
+      ]
+     },
+     "2": {
+      "center_mm": [
+       -39.99999910593033,
+       59.99999865889549,
+       50.00000074505806
+      ],
+      "edge_lengths_mm": [
+       28.00000086426735,
+       28.00000086426735,
+       100.00000149011612
+      ]
+     },
+     "3": {
+      "center_mm": [
+       -39.99999910593033,
+       -59.99999865889549,
+       50.00000074505806
+      ],
+      "edge_lengths_mm": [
+       28.00000086426735,
+       28.00000086426735,
+       100.00000149011612
+      ]
+     },
+     "4": {
+      "center_mm": [
+       52.0886667072773,
+       20.105818286538124,
+       115.1440218091011
+      ],
+      "edge_lengths_mm": [
+       28.00000086426735,
+       36.23319789767265,
+       14.288040809333324
+      ]
+     },
+     "5": {
+      "center_mm": [
+       47.52814024686813,
+       -20.931344479322433,
+       115.38264155387878
+      ],
+      "edge_lengths_mm": [
+       28.00000086426735,
+       35.985760390758514,
+       14.765284955501556
+      ]
+     },
+     "6": {
+      "center_mm": [
+       -35.078465938568115,
+       29.28716316819191,
+       117.68171191215515
+      ],
+      "edge_lengths_mm": [
+       33.709824085235596,
+       32.25965052843094,
+       19.363416358828545
+      ]
+     },
+     "7": {
+      "center_mm": [
+       -37.16607391834259,
+       -30.815789476037025,
+       117.64592677354813
+      ],
+      "edge_lengths_mm": [
+       33.135704696178436,
+       30.173975974321365,
+       19.29185353219509
+      ]
+     },
+     "8": {
+      "center_mm": [
+       19.999999552965164,
+       -19.999999552965164,
+       137.39943504333496
+      ],
+      "edge_lengths_mm": [
+       28.00000086426735,
+       28.00000086426735,
+       14.222774654626846
+      ]
+     },
+     "9": {
+      "center_mm": [
+       0.0,
+       0.0,
+       104.00000214576721
+      ],
+      "edge_lengths_mm": [
+       100.00000149011612,
+       200.00000298023224,
+       8.00000037997961
+      ]
+     },
+     "10": {
+      "center_mm": [
+       0.0,
+       0.0,
+       126.288041472435
+      ],
+      "edge_lengths_mm": [
+       100.00000149011612,
+       100.00000149011612,
+       8.00000037997961
+      ]
+     }
+    },
+    "latent": {
+     "0": {
+      "center_mm": [
+       39.99999910593033,
+       59.99999865889549,
+       50.00000074505806
+      ],
+      "edge_lengths_mm": [
+       28.00000086426735,
+       28.00000086426735,
+       100.00000149011612
+      ]
+     },
+     "1": {
+      "center_mm": [
+       39.99999910593033,
+       -59.99999865889549,
+       50.00000074505806
+      ],
+      "edge_lengths_mm": [
+       28.00000086426735,
+       28.00000086426735,
+       100.00000149011612
+      ]
+     },
+     "2": {
+      "center_mm": [
+       -39.99999910593033,
+       59.99999865889549,
+       50.00000074505806
+      ],
+      "edge_lengths_mm": [
+       28.00000086426735,
+       28.00000086426735,
+       100.00000149011612
+      ]
+     },
+     "3": {
+      "center_mm": [
+       -39.99999910593033,
+       -59.99999865889549,
+       50.00000074505806
+      ],
+      "edge_lengths_mm": [
+       28.00000086426735,
+       28.00000086426735,
+       100.00000149011612
+      ]
+     },
+     "4": {
+      "center_mm": [
+       17.934491857886314,
+       15.000000596046448,
+       114.03675377368927
+      ],
+      "edge_lengths_mm": [
+       36.83003410696983,
+       36.016806960105896,
+       12.073497287929058
+      ]
+     },
+     "5": {
+      "center_mm": [
+       30.68341687321663,
+       -15.000000596046448,
+       114.47297781705856
+      ],
+      "edge_lengths_mm": [
+       36.845024675130844,
+       36.07233986258507,
+       12.945953756570816
+      ]
+     },
+     "6": {
+      "center_mm": [
+       -23.80136400461197,
+       15.000000596046448,
+       114.1585260629654
+      ],
+      "edge_lengths_mm": [
+       36.834511905908585,
+       36.03145852684975,
+       12.31704093515873
+      ]
+     },
+     "7": {
+      "center_mm": [
+       -15.217287465929985,
+       -15.000000596046448,
+       114.79607224464417
+      ],
+      "edge_lengths_mm": [
+       36.854732781648636,
+       36.11843287944794,
+       13.59214261174202
+      ]
+     },
+     "8": {
+      "center_mm": [
+       0.2475334331393242,
+       0.183360738446936,
+       132.76581466197968
+      ],
+      "edge_lengths_mm": [
+       35.93124449253082,
+       35.47978028655052,
+       9.384628385305405
+      ]
+     },
+     "9": {
+      "center_mm": [
+       0.0,
+       0.0,
+       104.00000214576721
+      ],
+      "edge_lengths_mm": [
+       100.00000149011612,
+       200.00000298023224,
+       8.00000037997961
+      ]
+     },
+     "10": {
+      "center_mm": [
+       0.0,
+       0.0,
+       124.07350540161133
+      ],
+      "edge_lengths_mm": [
+       100.00000149011612,
+       100.00000149011612,
+       8.00000037997961
+      ]
+     }
+    }
+   },
+   "pairs": [
+    {
+     "pair_id": "0-9",
+     "parent": 0,
+     "child": 9,
+     "contact_face_code": 4,
+     "contact_axis": 2,
+     "raw": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 24.0,
+      "thickness_mm": 8.0,
+      "analytical_ok": true,
+      "p_feasible": 0.9999707937240601,
+      "gnn_overlap_mm": 23.242546245455742,
+      "gnn_thickness_mm": 8.731529116630554,
+      "gnn_ok": true,
+      "bluff": false
+     },
+     "initial": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 24.00000089406967,
+      "thickness_mm": 8.0,
+      "analytical_ok": true,
+      "p_feasible": 0.9999707937240601,
+      "gnn_overlap_mm": 23.242546245455742,
+      "gnn_thickness_mm": 8.731529116630554,
+      "gnn_ok": true,
+      "bluff": false
+     },
+     "initial_p_feasible_param": 0.9999586343765259,
+     "initial_p_feasible_latent": 0.9999707937240601,
+     "param": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 24.000002071261406,
+      "thickness_mm": 8.00000037997961,
+      "analytical_ok": true,
+      "p_feasible": 0.9999586343765259,
+      "gnn_overlap_mm": 24.36753548681736,
+      "gnn_thickness_mm": 9.878769516944885,
+      "gnn_ok": true,
+      "bluff": false
+     },
+     "latent": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 24.000002071261406,
+      "thickness_mm": 8.00000037997961,
+      "analytical_ok": true,
+      "p_feasible": 0.9999707937240601,
+      "gnn_overlap_mm": 23.242546245455742,
+      "gnn_thickness_mm": 8.731529116630554,
+      "gnn_ok": true,
+      "bluff": false
+     }
+    },
+    {
+     "pair_id": "1-9",
+     "parent": 1,
+     "child": 9,
+     "contact_face_code": 4,
+     "contact_axis": 2,
+     "raw": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 24.0,
+      "thickness_mm": 8.0,
+      "analytical_ok": true,
+      "p_feasible": 0.9999696016311646,
+      "gnn_overlap_mm": 23.25095236301422,
+      "gnn_thickness_mm": 8.753173053264618,
+      "gnn_ok": true,
+      "bluff": false
+     },
+     "initial": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 24.00000089406967,
+      "thickness_mm": 8.0,
+      "analytical_ok": true,
+      "p_feasible": 0.9999696016311646,
+      "gnn_overlap_mm": 23.25095236301422,
+      "gnn_thickness_mm": 8.753173053264618,
+      "gnn_ok": true,
+      "bluff": false
+     },
+     "initial_p_feasible_param": 0.9999603033065796,
+     "initial_p_feasible_latent": 0.9999696016311646,
+     "param": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 24.000002071261406,
+      "thickness_mm": 8.00000037997961,
+      "analytical_ok": true,
+      "p_feasible": 0.9999603033065796,
+      "gnn_overlap_mm": 24.321652948856354,
+      "gnn_thickness_mm": 9.79827344417572,
+      "gnn_ok": true,
+      "bluff": false
+     },
+     "latent": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 24.000002071261406,
+      "thickness_mm": 8.00000037997961,
+      "analytical_ok": true,
+      "p_feasible": 0.9999696016311646,
+      "gnn_overlap_mm": 23.25095236301422,
+      "gnn_thickness_mm": 8.753173053264618,
+      "gnn_ok": true,
+      "bluff": false
+     }
+    },
+    {
+     "pair_id": "2-9",
+     "parent": 2,
+     "child": 9,
+     "contact_face_code": 4,
+     "contact_axis": 2,
+     "raw": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 24.0,
+      "thickness_mm": 8.0,
+      "analytical_ok": true,
+      "p_feasible": 0.9999692440032959,
+      "gnn_overlap_mm": 23.323114961385727,
+      "gnn_thickness_mm": 8.754536509513855,
+      "gnn_ok": true,
+      "bluff": false
+     },
+     "initial": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 24.00000089406967,
+      "thickness_mm": 8.0,
+      "analytical_ok": true,
+      "p_feasible": 0.9999692440032959,
+      "gnn_overlap_mm": 23.323114961385727,
+      "gnn_thickness_mm": 8.754536509513855,
+      "gnn_ok": true,
+      "bluff": false
+     },
+     "initial_p_feasible_param": 0.9999587535858154,
+     "initial_p_feasible_latent": 0.9999692440032959,
+     "param": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 24.000002071261406,
+      "thickness_mm": 8.00000037997961,
+      "analytical_ok": true,
+      "p_feasible": 0.9999587535858154,
+      "gnn_overlap_mm": 24.37470853328705,
+      "gnn_thickness_mm": 9.871914982795715,
+      "gnn_ok": true,
+      "bluff": false
+     },
+     "latent": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 24.000002071261406,
+      "thickness_mm": 8.00000037997961,
+      "analytical_ok": true,
+      "p_feasible": 0.9999692440032959,
+      "gnn_overlap_mm": 23.323114961385727,
+      "gnn_thickness_mm": 8.754536509513855,
+      "gnn_ok": true,
+      "bluff": false
+     }
+    },
+    {
+     "pair_id": "3-9",
+     "parent": 3,
+     "child": 9,
+     "contact_face_code": 4,
+     "contact_axis": 2,
+     "raw": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 24.0,
+      "thickness_mm": 8.0,
+      "analytical_ok": true,
+      "p_feasible": 0.9999674558639526,
+      "gnn_overlap_mm": 23.339632898569107,
+      "gnn_thickness_mm": 8.784309029579163,
+      "gnn_ok": true,
+      "bluff": false
+     },
+     "initial": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 24.00000089406967,
+      "thickness_mm": 8.0,
+      "analytical_ok": true,
+      "p_feasible": 0.9999674558639526,
+      "gnn_overlap_mm": 23.339632898569107,
+      "gnn_thickness_mm": 8.784309029579163,
+      "gnn_ok": true,
+      "bluff": false
+     },
+     "initial_p_feasible_param": 0.9999603033065796,
+     "initial_p_feasible_latent": 0.9999674558639526,
+     "param": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 24.000002071261406,
+      "thickness_mm": 8.00000037997961,
+      "analytical_ok": true,
+      "p_feasible": 0.9999603033065796,
+      "gnn_overlap_mm": 24.33328703045845,
+      "gnn_thickness_mm": 9.799867868423462,
+      "gnn_ok": true,
+      "bluff": false
+     },
+     "latent": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 24.000002071261406,
+      "thickness_mm": 8.00000037997961,
+      "analytical_ok": true,
+      "p_feasible": 0.9999674558639526,
+      "gnn_overlap_mm": 23.339632898569107,
+      "gnn_thickness_mm": 8.784309029579163,
+      "gnn_ok": true,
+      "bluff": false
+     }
+    },
+    {
+     "pair_id": "4-9",
+     "parent": 9,
+     "child": 4,
+     "contact_face_code": 4,
+     "contact_axis": 2,
+     "raw": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 27.999999999999996,
+      "thickness_mm": 100.0,
+      "analytical_ok": false,
+      "p_feasible": 4.257670216389897e-09,
+      "gnn_overlap_mm": 17.626535147428513,
+      "gnn_thickness_mm": 91.50953590869904,
+      "gnn_ok": false,
+      "bluff": false
+     },
+     "initial": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 27.999999999999996,
+      "thickness_mm": 100.0,
+      "analytical_ok": false,
+      "p_feasible": 4.257670216389897e-09,
+      "gnn_overlap_mm": 17.626535147428513,
+      "gnn_thickness_mm": 91.50953590869904,
+      "gnn_ok": false,
+      "bluff": false
+     },
+     "initial_p_feasible_param": 1.9383344351808773e-07,
+     "initial_p_feasible_latent": 4.257670216389897e-09,
+     "param": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 11.911334469914436,
+      "thickness_mm": 14.288040809333324,
+      "analytical_ok": true,
+      "p_feasible": 0.9828952550888062,
+      "gnn_overlap_mm": 19.579675048589706,
+      "gnn_thickness_mm": 15.999358147382736,
+      "gnn_ok": true,
+      "bluff": false
+     },
+     "latent": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 36.016806960105896,
+      "thickness_mm": 12.073497287929058,
+      "analytical_ok": true,
+      "p_feasible": 0.9961434006690979,
+      "gnn_overlap_mm": 25.185024365782738,
+      "gnn_thickness_mm": 10.947838425636292,
+      "gnn_ok": true,
+      "bluff": false
+     }
+    },
+    {
+     "pair_id": "4-10",
+     "parent": 4,
+     "child": 10,
+     "contact_face_code": 4,
+     "contact_axis": 2,
+     "raw": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 27.999999999999996,
+      "thickness_mm": 8.0,
+      "analytical_ok": true,
+      "p_feasible": 0.9999845027923584,
+      "gnn_overlap_mm": 16.727227717638016,
+      "gnn_thickness_mm": 9.916894137859344,
+      "gnn_ok": true,
+      "bluff": false
+     },
+     "initial": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 27.999999999999996,
+      "thickness_mm": 8.0,
+      "analytical_ok": true,
+      "p_feasible": 0.9999845027923584,
+      "gnn_overlap_mm": 16.727251932024956,
+      "gnn_thickness_mm": 9.916923940181732,
+      "gnn_ok": true,
+      "bluff": false
+     },
+     "initial_p_feasible_param": 0.9324120283126831,
+     "initial_p_feasible_latent": 0.9999845027923584,
+     "param": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 11.911334469914436,
+      "thickness_mm": 8.00000037997961,
+      "analytical_ok": true,
+      "p_feasible": 0.9993114471435547,
+      "gnn_overlap_mm": 13.32710962742567,
+      "gnn_thickness_mm": 8.872181177139282,
+      "gnn_ok": true,
+      "bluff": false
+     },
+     "latent": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 36.016806960105896,
+      "thickness_mm": 8.00000037997961,
+      "analytical_ok": true,
+      "p_feasible": 0.9999984502792358,
+      "gnn_overlap_mm": 22.350560873746872,
+      "gnn_thickness_mm": 10.67478209733963,
+      "gnn_ok": true,
+      "bluff": false
+     }
+    },
+    {
+     "pair_id": "5-9",
+     "parent": 9,
+     "child": 5,
+     "contact_face_code": 4,
+     "contact_axis": 2,
+     "raw": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 27.999999999999996,
+      "thickness_mm": 100.0,
+      "analytical_ok": false,
+      "p_feasible": 4.452019641831839e-09,
+      "gnn_overlap_mm": 17.590947449207306,
+      "gnn_thickness_mm": 91.31965786218643,
+      "gnn_ok": false,
+      "bluff": false
+     },
+     "initial": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 27.999999999999996,
+      "thickness_mm": 100.0,
+      "analytical_ok": false,
+      "p_feasible": 4.452019641831839e-09,
+      "gnn_overlap_mm": 17.590947449207306,
+      "gnn_thickness_mm": 91.31965786218643,
+      "gnn_ok": false,
+      "bluff": false
+     },
+     "initial_p_feasible_param": 3.4475181109883124e-07,
+     "initial_p_feasible_latent": 4.452019641831839e-09,
+     "param": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 16.4718609303236,
+      "thickness_mm": 14.765284955501556,
+      "analytical_ok": true,
+      "p_feasible": 0.9835065603256226,
+      "gnn_overlap_mm": 21.432895213365555,
+      "gnn_thickness_mm": 16.41729846596718,
+      "gnn_ok": true,
+      "bluff": false
+     },
+     "latent": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 36.07233986258507,
+      "thickness_mm": 12.945953756570816,
+      "analytical_ok": true,
+      "p_feasible": 0.9963940978050232,
+      "gnn_overlap_mm": 25.6546288728714,
+      "gnn_thickness_mm": 11.020958423614502,
+      "gnn_ok": true,
+      "bluff": false
+     }
+    },
+    {
+     "pair_id": "5-10",
+     "parent": 5,
+     "child": 10,
+     "contact_face_code": 4,
+     "contact_axis": 2,
+     "raw": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 27.999999999999996,
+      "thickness_mm": 8.0,
+      "analytical_ok": true,
+      "p_feasible": 0.9999842643737793,
+      "gnn_overlap_mm": 16.72455295920372,
+      "gnn_thickness_mm": 9.918347001075745,
+      "gnn_ok": true,
+      "bluff": false
+     },
+     "initial": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 27.999999999999996,
+      "thickness_mm": 8.0,
+      "analytical_ok": true,
+      "p_feasible": 0.9999842643737793,
+      "gnn_overlap_mm": 16.72455295920372,
+      "gnn_thickness_mm": 9.918347001075745,
+      "gnn_ok": true,
+      "bluff": false
+     },
+     "initial_p_feasible_param": 0.9391952157020569,
+     "initial_p_feasible_latent": 0.9999842643737793,
+     "param": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 16.4718609303236,
+      "thickness_mm": 8.00000037997961,
+      "analytical_ok": true,
+      "p_feasible": 0.9998642206192017,
+      "gnn_overlap_mm": 16.226446256041527,
+      "gnn_thickness_mm": 8.640266954898834,
+      "gnn_ok": true,
+      "bluff": false
+     },
+     "latent": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 36.07233986258507,
+      "thickness_mm": 8.00000037997961,
+      "analytical_ok": true,
+      "p_feasible": 0.9999964237213135,
+      "gnn_overlap_mm": 21.62829600274563,
+      "gnn_thickness_mm": 10.155551135540009,
+      "gnn_ok": true,
+      "bluff": false
+     }
+    },
+    {
+     "pair_id": "6-9",
+     "parent": 9,
+     "child": 6,
+     "contact_face_code": 4,
+     "contact_axis": 2,
+     "raw": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 27.999999999999996,
+      "thickness_mm": 100.0,
+      "analytical_ok": false,
+      "p_feasible": 4.481181203885853e-09,
+      "gnn_overlap_mm": 17.65291951596737,
+      "gnn_thickness_mm": 91.40270948410034,
+      "gnn_ok": false,
+      "bluff": false
+     },
+     "initial": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 27.999999999999996,
+      "thickness_mm": 100.0,
+      "analytical_ok": false,
+      "p_feasible": 4.481181203885853e-09,
+      "gnn_overlap_mm": 17.65291951596737,
+      "gnn_thickness_mm": 91.40270948410034,
+      "gnn_ok": false,
+      "bluff": false
+     },
+     "initial_p_feasible_param": 1.8972721704813011e-07,
+     "initial_p_feasible_latent": 4.481181203885853e-09,
+     "param": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 31.776446849107742,
+      "thickness_mm": 19.363416358828545,
+      "analytical_ok": true,
+      "p_feasible": 0.9869526624679565,
+      "gnn_overlap_mm": 27.809305116534233,
+      "gnn_thickness_mm": 18.47032457590103,
+      "gnn_ok": true,
+      "bluff": false
+     },
+     "latent": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 36.03145852684975,
+      "thickness_mm": 12.31704093515873,
+      "analytical_ok": true,
+      "p_feasible": 0.996606707572937,
+      "gnn_overlap_mm": 25.501489639282227,
+      "gnn_thickness_mm": 10.831579566001892,
+      "gnn_ok": true,
+      "bluff": false
+     }
+    },
+    {
+     "pair_id": "6-10",
+     "parent": 6,
+     "child": 10,
+     "contact_face_code": 4,
+     "contact_axis": 2,
+     "raw": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 27.999999999999996,
+      "thickness_mm": 8.0,
+      "analytical_ok": true,
+      "p_feasible": 0.9999841451644897,
+      "gnn_overlap_mm": 16.751322895288467,
+      "gnn_thickness_mm": 9.91056114435196,
+      "gnn_ok": true,
+      "bluff": false
+     },
+     "initial": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 27.999999999999996,
+      "thickness_mm": 8.0,
+      "analytical_ok": true,
+      "p_feasible": 0.9999841451644897,
+      "gnn_overlap_mm": 16.75131544470787,
+      "gnn_thickness_mm": 9.910576045513153,
+      "gnn_ok": true,
+      "bluff": false
+     },
+     "initial_p_feasible_param": 0.9312314987182617,
+     "initial_p_feasible_latent": 0.9999841451644897,
+     "param": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 31.776446849107742,
+      "thickness_mm": 8.00000037997961,
+      "analytical_ok": true,
+      "p_feasible": 0.999862551689148,
+      "gnn_overlap_mm": 23.99282529950142,
+      "gnn_thickness_mm": 10.989874601364136,
+      "gnn_ok": true,
+      "bluff": false
+     },
+     "latent": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 36.03145852684975,
+      "thickness_mm": 8.00000037997961,
+      "analytical_ok": true,
+      "p_feasible": 0.9999977350234985,
+      "gnn_overlap_mm": 22.150952368974686,
+      "gnn_thickness_mm": 10.521523654460907,
+      "gnn_ok": true,
+      "bluff": false
+     }
+    },
+    {
+     "pair_id": "7-9",
+     "parent": 9,
+     "child": 7,
+     "contact_face_code": 4,
+     "contact_axis": 2,
+     "raw": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 27.999999999999996,
+      "thickness_mm": 100.0,
+      "analytical_ok": false,
+      "p_feasible": 4.683803567218092e-09,
+      "gnn_overlap_mm": 17.616933211684227,
+      "gnn_thickness_mm": 91.20720624923706,
+      "gnn_ok": false,
+      "bluff": false
+     },
+     "initial": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 27.999999999999996,
+      "thickness_mm": 100.0,
+      "analytical_ok": false,
+      "p_feasible": 4.683803567218092e-09,
+      "gnn_overlap_mm": 17.616933211684227,
+      "gnn_thickness_mm": 91.20720624923706,
+      "gnn_ok": false,
+      "bluff": false
+     },
+     "initial_p_feasible_param": 2.97361083312353e-07,
+     "initial_p_feasible_latent": 4.683803567218092e-09,
+     "param": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 29.401779174804688,
+      "thickness_mm": 19.29185353219509,
+      "analytical_ok": true,
+      "p_feasible": 0.9845906496047974,
+      "gnn_overlap_mm": 27.068041265010834,
+      "gnn_thickness_mm": 18.494755029678345,
+      "gnn_ok": true,
+      "bluff": false
+     },
+     "latent": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 36.11843287944794,
+      "thickness_mm": 13.59214261174202,
+      "analytical_ok": true,
+      "p_feasible": 0.994665265083313,
+      "gnn_overlap_mm": 25.1593217253685,
+      "gnn_thickness_mm": 12.11915910243988,
+      "gnn_ok": true,
+      "bluff": false
+     }
+    },
+    {
+     "pair_id": "7-10",
+     "parent": 7,
+     "child": 10,
+     "contact_face_code": 4,
+     "contact_axis": 2,
+     "raw": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 27.999999999999996,
+      "thickness_mm": 8.0,
+      "analytical_ok": true,
+      "p_feasible": 0.999983549118042,
+      "gnn_overlap_mm": 16.74306020140648,
+      "gnn_thickness_mm": 9.918257594108582,
+      "gnn_ok": true,
+      "bluff": false
+     },
+     "initial": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 27.999999999999996,
+      "thickness_mm": 8.0,
+      "analytical_ok": true,
+      "p_feasible": 0.999983549118042,
+      "gnn_overlap_mm": 16.743028536438942,
+      "gnn_thickness_mm": 9.918272495269775,
+      "gnn_ok": true,
+      "bluff": false
+     },
+     "initial_p_feasible_param": 0.9381645917892456,
+     "initial_p_feasible_latent": 0.999983549118042,
+     "param": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 29.401779174804688,
+      "thickness_mm": 8.00000037997961,
+      "analytical_ok": true,
+      "p_feasible": 0.9997987151145935,
+      "gnn_overlap_mm": 22.95835129916668,
+      "gnn_thickness_mm": 10.784178972244263,
+      "gnn_ok": true,
+      "bluff": false
+     },
+     "latent": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 36.11843287944794,
+      "thickness_mm": 8.00000037997961,
+      "analytical_ok": true,
+      "p_feasible": 0.9999988079071045,
+      "gnn_overlap_mm": 22.909015417099,
+      "gnn_thickness_mm": 10.800182819366455,
+      "gnn_ok": true,
+      "bluff": false
+     }
+    },
+    {
+     "pair_id": "8-10",
+     "parent": 10,
+     "child": 8,
+     "contact_face_code": 4,
+     "contact_axis": 2,
+     "raw": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 28.0,
+      "thickness_mm": 100.0,
+      "analytical_ok": false,
+      "p_feasible": 2.511412085237641e-11,
+      "gnn_overlap_mm": 18.214460462331772,
+      "gnn_thickness_mm": 88.7920930981636,
+      "gnn_ok": false,
+      "bluff": false
+     },
+     "initial": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 28.0,
+      "thickness_mm": 100.0,
+      "analytical_ok": false,
+      "p_feasible": 2.5114216262167588e-11,
+      "gnn_overlap_mm": 18.214469775557518,
+      "gnn_thickness_mm": 88.7920930981636,
+      "gnn_ok": false,
+      "bluff": false
+     },
+     "initial_p_feasible_param": 9.283764857944462e-16,
+     "initial_p_feasible_latent": 2.5114216262167588e-11,
+     "param": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 28.00000086426735,
+      "thickness_mm": 14.222774654626846,
+      "analytical_ok": true,
+      "p_feasible": 0.704517662525177,
+      "gnn_overlap_mm": 21.284781396389008,
+      "gnn_thickness_mm": 11.566035449504852,
+      "gnn_ok": true,
+      "bluff": false
+     },
+     "latent": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 35.47978028655052,
+      "thickness_mm": 9.384628385305405,
+      "analytical_ok": true,
+      "p_feasible": 0.9995408058166504,
+      "gnn_overlap_mm": 22.439662367105484,
+      "gnn_thickness_mm": 9.448491036891937,
+      "gnn_ok": true,
+      "bluff": false
+     }
+    }
+   ]
+  },
+  {
+   "design": "giraffe_candidate_4_retry1",
+   "label": "giraffe_candidate_4_retry1  (row 0, 5 blocks, 4 joints)",
+   "csv_file": "giraffe_candidate_4_retry1_ml_input.csv",
+   "row": 0,
+   "n_blocks": 5,
+   "connections": [
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     3,
+     4
+    ]
+   ],
+   "blocks": {
+    "raw": {
+     "0": {
+      "center_mm": [
+       -60.0,
+       0.0,
+       100.0
+      ],
+      "edge_lengths_mm": [
+       28.0,
+       28.0,
+       200.0
+      ]
+     },
+     "1": {
+      "center_mm": [
+       60.0,
+       0.0,
+       100.0
+      ],
+      "edge_lengths_mm": [
+       28.0,
+       28.0,
+       200.0
+      ]
+     },
+     "2": {
+      "center_mm": [
+       0.0,
+       0.0,
+       224.0
+      ],
+      "edge_lengths_mm": [
+       200.0,
+       24.0,
+       48.0
+      ]
+     },
+     "3": {
+      "center_mm": [
+       80.0,
+       0.0,
+       298.0
+      ],
+      "edge_lengths_mm": [
+       28.0,
+       28.0,
+       100.0
+      ]
+     },
+     "4": {
+      "center_mm": [
+       110.0,
+       0.0,
+       372.0
+      ],
+      "edge_lengths_mm": [
+       100.0,
+       24.0,
+       48.0
+      ]
+     }
+    },
+    "initial": {
+     "0": {
+      "center_mm": [
+       -59.99999865889549,
+       0.0,
+       100.00000149011612
+      ],
+      "edge_lengths_mm": [
+       28.0,
+       28.0,
+       200.0
+      ]
+     },
+     "1": {
+      "center_mm": [
+       59.99999865889549,
+       0.0,
+       100.00000149011612
+      ],
+      "edge_lengths_mm": [
+       28.0,
+       28.0,
+       200.0
+      ]
+     },
+     "2": {
+      "center_mm": [
+       0.0,
+       0.0,
+       224.0
+      ],
+      "edge_lengths_mm": [
+       200.0,
+       24.0,
+       48.0
+      ]
+     },
+     "3": {
+      "center_mm": [
+       79.99999821186066,
+       0.0,
+       298.0000078678131
+      ],
+      "edge_lengths_mm": [
+       28.0,
+       28.0,
+       100.0
+      ]
+     },
+     "4": {
+      "center_mm": [
+       109.99999940395355,
+       0.0,
+       372.0000088214874
+      ],
+      "edge_lengths_mm": [
+       100.0,
+       24.0,
+       48.0
+      ]
+     }
+    },
+    "param": {
+     "0": {
+      "center_mm": [
+       -59.99999865889549,
+       0.0,
+       100.00000149011612
+      ],
+      "edge_lengths_mm": [
+       28.00000086426735,
+       28.00000086426735,
+       200.00000298023224
+      ]
+     },
+     "1": {
+      "center_mm": [
+       59.99999865889549,
+       0.0,
+       100.00000149011612
+      ],
+      "edge_lengths_mm": [
+       28.00000086426735,
+       28.00000086426735,
+       200.00000298023224
+      ]
+     },
+     "2": {
+      "center_mm": [
+       19.999999552965164,
+       1.0753658134490252,
+       206.92555606365204
+      ],
+      "edge_lengths_mm": [
+       200.00000298023224,
+       28.519924730062485,
+       13.851099647581577
+      ]
+     },
+     "3": {
+      "center_mm": [
+       73.19769263267517,
+       -19.999999552965164,
+       278.3510982990265
+      ],
+      "edge_lengths_mm": [
+       28.00000086426735,
+       28.00000086426735,
+       128.9999932050705
+      ]
+     },
+     "4": {
+      "center_mm": [
+       109.32540148496628,
+       15.625262632966042,
+       366.53774976730347
+      ],
+      "edge_lengths_mm": [
+       100.00000149011612,
+       24.000000208616257,
+       47.37329110503197
+      ]
+     }
+    },
+    "latent": {
+     "0": {
+      "center_mm": [
+       -59.99999865889549,
+       0.0,
+       100.00000149011612
+      ],
+      "edge_lengths_mm": [
+       28.00000086426735,
+       28.00000086426735,
+       200.00000298023224
+      ]
+     },
+     "1": {
+      "center_mm": [
+       59.99999865889549,
+       0.0,
+       100.00000149011612
+      ],
+      "edge_lengths_mm": [
+       28.00000086426735,
+       28.00000086426735,
+       200.00000298023224
+      ]
+     },
+     "2": {
+      "center_mm": [
+       -3.0682221986353397,
+       -4.10639401525259,
+       206.471249461174
+      ],
+      "edge_lengths_mm": [
+       200.42555034160614,
+       30.39379045367241,
+       12.942496687173843
+      ]
+     },
+     "3": {
+      "center_mm": [
+       59.99999865889549,
+       -2.1123364567756653,
+       217.31646358966827
+      ],
+      "edge_lengths_mm": [
+       36.72603890299797,
+       36.11092269420624,
+       8.747931569814682
+      ]
+     },
+     "4": {
+      "center_mm": [
+       105.29636591672897,
+       1.4592442894354463,
+       227.70452499389648
+      ],
+      "edge_lengths_mm": [
+       106.2113419175148,
+       31.395789235830307,
+       12.028180062770844
+      ]
+     }
+    }
+   },
+   "pairs": [
+    {
+     "pair_id": "0-2",
+     "parent": 0,
+     "child": 2,
+     "contact_face_code": 4,
+     "contact_axis": 2,
+     "raw": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 24.0,
+      "thickness_mm": 48.0,
+      "analytical_ok": false,
+      "p_feasible": 5.8863502516715016e-08,
+      "gnn_overlap_mm": 11.184380389750004,
+      "gnn_thickness_mm": 45.55375874042511,
+      "gnn_ok": false,
+      "bluff": false
+     },
+     "initial": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 24.0,
+      "thickness_mm": 48.0,
+      "analytical_ok": false,
+      "p_feasible": 5.8863502516715016e-08,
+      "gnn_overlap_mm": 11.184380389750004,
+      "gnn_thickness_mm": 45.55375874042511,
+      "gnn_ok": false,
+      "bluff": false
+     },
+     "initial_p_feasible_param": 9.066837947102613e-07,
+     "initial_p_feasible_latent": 5.8863502516715016e-08,
+     "param": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 27.184596983715892,
+      "thickness_mm": 13.851099647581577,
+      "analytical_ok": true,
+      "p_feasible": 0.7848384380340576,
+      "gnn_overlap_mm": 8.273869752883911,
+      "gnn_thickness_mm": 18.250688910484314,
+      "gnn_ok": false,
+      "bluff": false
+     },
+     "latent": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 25.09050164371729,
+      "thickness_mm": 12.942496687173843,
+      "analytical_ok": true,
+      "p_feasible": 0.8593957424163818,
+      "gnn_overlap_mm": 11.80970948189497,
+      "gnn_thickness_mm": 16.99671521782875,
+      "gnn_ok": true,
+      "bluff": false
+     }
+    },
+    {
+     "pair_id": "1-2",
+     "parent": 1,
+     "child": 2,
+     "contact_face_code": 4,
+     "contact_axis": 2,
+     "raw": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 24.0,
+      "thickness_mm": 48.0,
+      "analytical_ok": false,
+      "p_feasible": 5.4109918323774764e-08,
+      "gnn_overlap_mm": 11.227577924728394,
+      "gnn_thickness_mm": 45.423515141010284,
+      "gnn_ok": false,
+      "bluff": false
+     },
+     "initial": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 24.0,
+      "thickness_mm": 48.0,
+      "analytical_ok": false,
+      "p_feasible": 5.4109918323774764e-08,
+      "gnn_overlap_mm": 11.227577924728394,
+      "gnn_thickness_mm": 45.423515141010284,
+      "gnn_ok": false,
+      "bluff": false
+     },
+     "initial_p_feasible_param": 8.710607630746381e-07,
+     "initial_p_feasible_latent": 5.4109918323774764e-08,
+     "param": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 27.184596983715892,
+      "thickness_mm": 13.851099647581577,
+      "analytical_ok": true,
+      "p_feasible": 0.7411007881164551,
+      "gnn_overlap_mm": 8.380342274904251,
+      "gnn_thickness_mm": 16.0665363073349,
+      "gnn_ok": false,
+      "bluff": false
+     },
+     "latent": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 25.09050164371729,
+      "thickness_mm": 12.942496687173843,
+      "analytical_ok": true,
+      "p_feasible": 0.8455723524093628,
+      "gnn_overlap_mm": 11.891767382621765,
+      "gnn_thickness_mm": 17.400100827217102,
+      "gnn_ok": true,
+      "bluff": false
+     }
+    },
+    {
+     "pair_id": "2-3",
+     "parent": 2,
+     "child": 3,
+     "contact_face_code": 4,
+     "contact_axis": 2,
+     "raw": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 24.0,
+      "thickness_mm": 100.0,
+      "analytical_ok": false,
+      "p_feasible": 3.3742887239895936e-07,
+      "gnn_overlap_mm": 15.352979302406311,
+      "gnn_thickness_mm": 96.40415012836456,
+      "gnn_ok": false,
+      "bluff": false
+     },
+     "initial": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 24.0,
+      "thickness_mm": 100.0,
+      "analytical_ok": false,
+      "p_feasible": 3.3742887239895936e-07,
+      "gnn_overlap_mm": 15.352979302406311,
+      "gnn_thickness_mm": 96.40415012836456,
+      "gnn_ok": false,
+      "bluff": false
+     },
+     "initial_p_feasible_param": 6.120146167631901e-07,
+     "initial_p_feasible_latent": 3.3742887239895936e-07,
+     "param": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 7.184597430750728,
+      "thickness_mm": 128.9999932050705,
+      "analytical_ok": false,
+      "p_feasible": 1.9258217243134368e-09,
+      "gnn_overlap_mm": 6.972296629101038,
+      "gnn_thickness_mm": 86.24701201915741,
+      "gnn_ok": false,
+      "bluff": false
+     },
+     "latent": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 30.39379045367241,
+      "thickness_mm": 8.747931569814682,
+      "analytical_ok": true,
+      "p_feasible": 0.9978121519088745,
+      "gnn_overlap_mm": 18.75937543809414,
+      "gnn_thickness_mm": 9.791180491447449,
+      "gnn_ok": true,
+      "bluff": false
+     }
+    },
+    {
+     "pair_id": "3-4",
+     "parent": 3,
+     "child": 4,
+     "contact_face_code": 4,
+     "contact_axis": 2,
+     "raw": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 24.0,
+      "thickness_mm": 48.0,
+      "analytical_ok": false,
+      "p_feasible": 2.2865849491626733e-10,
+      "gnn_overlap_mm": 18.181130290031433,
+      "gnn_thickness_mm": 45.2096089720726,
+      "gnn_ok": false,
+      "bluff": false
+     },
+     "initial": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 24.0,
+      "thickness_mm": 48.0,
+      "analytical_ok": false,
+      "p_feasible": 2.2865849491626733e-10,
+      "gnn_overlap_mm": 18.181130290031433,
+      "gnn_thickness_mm": 45.2096089720726,
+      "gnn_ok": false,
+      "bluff": false
+     },
+     "initial_p_feasible_param": 5.263779412345571e-10,
+     "initial_p_feasible_latent": 2.2865849491626733e-10,
+     "param": {
+      "contact_face_code": 2,
+      "contact_axis": 1,
+      "overlap_mm": 0.0,
+      "thickness_mm": 47.37329110503197,
+      "analytical_ok": false,
+      "p_feasible": 1.3664339348906651e-05,
+      "gnn_overlap_mm": 0.3690359299071133,
+      "gnn_thickness_mm": 34.43126007914543,
+      "gnn_ok": false,
+      "bluff": false
+     },
+     "latent": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 26.172323152422905,
+      "thickness_mm": 12.028180062770844,
+      "analytical_ok": true,
+      "p_feasible": 0.993351936340332,
+      "gnn_overlap_mm": 18.6393391340971,
+      "gnn_thickness_mm": 15.18017053604126,
+      "gnn_ok": true,
+      "bluff": false
+     }
+    }
+   ]
+  },
+  {
+   "design": "letter_t_candidate_2",
+   "label": "letter_t_candidate_2  (row 0, 3 blocks, 2 joints)",
+   "csv_file": "letter_t_candidate_2_ml_input.csv",
+   "row": 0,
+   "n_blocks": 3,
+   "connections": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ]
+   ],
+   "blocks": {
+    "raw": {
+     "0": {
+      "center_mm": [
+       0.0,
+       0.0,
+       50.0
+      ],
+      "edge_lengths_mm": [
+       28.0,
+       28.0,
+       100.0
+      ]
+     },
+     "1": {
+      "center_mm": [
+       0.0,
+       0.0,
+       150.0
+      ],
+      "edge_lengths_mm": [
+       28.0,
+       28.0,
+       100.0
+      ]
+     },
+     "2": {
+      "center_mm": [
+       0.0,
+       0.0,
+       224.0
+      ],
+      "edge_lengths_mm": [
+       200.0,
+       24.0,
+       48.0
+      ]
+     }
+    },
+    "initial": {
+     "0": {
+      "center_mm": [
+       0.0,
+       0.0,
+       50.00000447034836
+      ],
+      "edge_lengths_mm": [
+       28.0,
+       28.0,
+       100.0
+      ]
+     },
+     "1": {
+      "center_mm": [
+       0.0,
+       0.0,
+       150.00000596046448
+      ],
+      "edge_lengths_mm": [
+       28.0,
+       28.0,
+       100.0
+      ]
+     },
+     "2": {
+      "center_mm": [
+       0.0,
+       0.0,
+       224.0
+      ],
+      "edge_lengths_mm": [
+       200.0,
+       24.0,
+       48.0
+      ]
+     }
+    },
+    "param": {
+     "0": {
+      "center_mm": [
+       0.0,
+       0.0,
+       50.00000447034836
+      ],
+      "edge_lengths_mm": [
+       28.00000086426735,
+       28.00000086426735,
+       100.00000149011612
+      ]
+     },
+     "1": {
+      "center_mm": [
+       -19.999999552965164,
+       -19.999999552965164,
+       164.49999809265137
+      ],
+      "edge_lengths_mm": [
+       28.00000086426735,
+       28.00000086426735,
+       128.9999932050705
+      ]
+     },
+     "2": {
+      "center_mm": [
+       -1.6578587237745523,
+       1.5894174575805664,
+       206.02121949195862
+      ],
+      "edge_lengths_mm": [
+       200.00000298023224,
+       15.178833156824112,
+       48.00000041723251
+      ]
+     }
+    },
+    "latent": {
+     "0": {
+      "center_mm": [
+       0.0,
+       0.0,
+       50.00000447034836
+      ],
+      "edge_lengths_mm": [
+       28.00000086426735,
+       28.00000086426735,
+       100.00000149011612
+      ]
+     },
+     "1": {
+      "center_mm": [
+       -0.5177218117751181,
+       -0.3753136843442917,
+       158.01240503787994
+      ],
+      "edge_lengths_mm": [
+       28.479931876063347,
+       37.511732429265976,
+       116.02480709552765
+      ]
+     },
+     "2": {
+      "center_mm": [
+       -2.0879385992884636,
+       -2.854524180293083,
+       225.62351822853088
+      ],
+      "edge_lengths_mm": [
+       199.63592290878296,
+       24.255510419607162,
+       19.19742301106453
+      ]
+     }
+    }
+   },
+   "pairs": [
+    {
+     "pair_id": "0-1",
+     "parent": 0,
+     "child": 1,
+     "contact_face_code": 4,
+     "contact_axis": 2,
+     "raw": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 28.0,
+      "thickness_mm": 100.0,
+      "analytical_ok": false,
+      "p_feasible": 1.35492271624571e-07,
+      "gnn_overlap_mm": 13.782032765448093,
+      "gnn_thickness_mm": 88.96753937005997,
+      "gnn_ok": false,
+      "bluff": false
+     },
+     "initial": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 28.0,
+      "thickness_mm": 100.0,
+      "analytical_ok": false,
+      "p_feasible": 1.354933090169652e-07,
+      "gnn_overlap_mm": 13.782026246190071,
+      "gnn_thickness_mm": 88.96752446889877,
+      "gnn_ok": false,
+      "bluff": false
+     },
+     "initial_p_feasible_param": 6.302330432837256e-15,
+     "initial_p_feasible_latent": 1.354933090169652e-07,
+     "param": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 8.000001311302185,
+      "thickness_mm": 128.9999932050705,
+      "analytical_ok": false,
+      "p_feasible": 6.484058810571824e-15,
+      "gnn_overlap_mm": 2.961963415145874,
+      "gnn_thickness_mm": 77.03448086977005,
+      "gnn_ok": false,
+      "bluff": false
+     },
+     "latent": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 27.72224455839023,
+      "thickness_mm": 116.02480709552765,
+      "analytical_ok": false,
+      "p_feasible": 1.2070313498702134e-11,
+      "gnn_overlap_mm": 17.775695770978928,
+      "gnn_thickness_mm": 102.58130729198456,
+      "gnn_ok": false,
+      "bluff": false
+     }
+    },
+    {
+     "pair_id": "1-2",
+     "parent": 1,
+     "child": 2,
+     "contact_face_code": 4,
+     "contact_axis": 2,
+     "raw": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 24.0,
+      "thickness_mm": 48.0,
+      "analytical_ok": false,
+      "p_feasible": 5.117085493111517e-06,
+      "gnn_overlap_mm": 12.914261780679226,
+      "gnn_thickness_mm": 42.653243988752365,
+      "gnn_ok": false,
+      "bluff": false
+     },
+     "initial": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 24.0,
+      "thickness_mm": 48.0,
+      "analytical_ok": false,
+      "p_feasible": 5.117085493111517e-06,
+      "gnn_overlap_mm": 12.914261780679226,
+      "gnn_thickness_mm": 42.653243988752365,
+      "gnn_ok": false,
+      "bluff": false
+     },
+     "initial_p_feasible_param": 5.4094641092905515e-12,
+     "initial_p_feasible_latent": 5.117085493111517e-06,
+     "param": {
+      "contact_face_code": 2,
+      "contact_axis": 1,
+      "overlap_mm": 0.0,
+      "thickness_mm": 48.00000041723251,
+      "analytical_ok": false,
+      "p_feasible": 0.9999948740005493,
+      "gnn_overlap_mm": 29.873594641685486,
+      "gnn_thickness_mm": 18.623046576976776,
+      "gnn_ok": true,
+      "bluff": true
+     },
+     "latent": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 24.255510419607162,
+      "thickness_mm": 19.19742301106453,
+      "analytical_ok": true,
+      "p_feasible": 0.9085744619369507,
+      "gnn_overlap_mm": 11.973485350608826,
+      "gnn_thickness_mm": 17.743170261383057,
+      "gnn_ok": true,
+      "bluff": false
+     }
+    }
+   ]
+  },
+  {
+   "design": "table_candidate_2_retry101",
+   "label": "table_candidate_2_retry101  (row 0, 5 blocks, 4 joints)",
+   "csv_file": "table_candidate_2_retry101_ml_input.csv",
+   "row": 0,
+   "n_blocks": 5,
+   "connections": [
+    [
+     0,
+     4
+    ],
+    [
+     1,
+     4
+    ],
+    [
+     2,
+     4
+    ],
+    [
+     3,
+     4
+    ]
+   ],
+   "blocks": {
+    "raw": {
+     "0": {
+      "center_mm": [
+       35.0,
+       85.0,
+       50.0
+      ],
+      "edge_lengths_mm": [
+       28.0,
+       28.0,
+       100.0
+      ]
+     },
+     "1": {
+      "center_mm": [
+       35.0,
+       -85.0,
+       50.0
+      ],
+      "edge_lengths_mm": [
+       28.0,
+       28.0,
+       100.0
+      ]
+     },
+     "2": {
+      "center_mm": [
+       -35.0,
+       85.0,
+       50.0
+      ],
+      "edge_lengths_mm": [
+       28.0,
+       28.0,
+       100.0
+      ]
+     },
+     "3": {
+      "center_mm": [
+       -35.0,
+       -85.0,
+       50.0
+      ],
+      "edge_lengths_mm": [
+       28.0,
+       28.0,
+       100.0
+      ]
+     },
+     "4": {
+      "center_mm": [
+       0.0,
+       0.0,
+       104.0
+      ],
+      "edge_lengths_mm": [
+       100.0,
+       200.0,
+       8.0
+      ]
+     }
+    },
+    "initial": {
+     "0": {
+      "center_mm": [
+       35.00000014901161,
+       85.00000089406967,
+       50.00000074505806
+      ],
+      "edge_lengths_mm": [
+       28.0,
+       28.0,
+       100.0
+      ]
+     },
+     "1": {
+      "center_mm": [
+       35.00000014901161,
+       -85.00000089406967,
+       50.00000074505806
+      ],
+      "edge_lengths_mm": [
+       28.0,
+       28.0,
+       100.0
+      ]
+     },
+     "2": {
+      "center_mm": [
+       -35.00000014901161,
+       85.00000089406967,
+       50.00000074505806
+      ],
+      "edge_lengths_mm": [
+       28.0,
+       28.0,
+       100.0
+      ]
+     },
+     "3": {
+      "center_mm": [
+       -35.00000014901161,
+       -85.00000089406967,
+       50.00000074505806
+      ],
+      "edge_lengths_mm": [
+       28.0,
+       28.0,
+       100.0
+      ]
+     },
+     "4": {
+      "center_mm": [
+       0.0,
+       0.0,
+       104.0
+      ],
+      "edge_lengths_mm": [
+       100.0,
+       200.0,
+       8.0
+      ]
+     }
+    },
+    "param": {
+     "0": {
+      "center_mm": [
+       35.00000014901161,
+       85.00000089406967,
+       50.00000074505806
+      ],
+      "edge_lengths_mm": [
+       28.00000086426735,
+       28.00000086426735,
+       100.00000149011612
+      ]
+     },
+     "1": {
+      "center_mm": [
+       35.00000014901161,
+       -85.00000089406967,
+       50.00000074505806
+      ],
+      "edge_lengths_mm": [
+       28.00000086426735,
+       28.00000086426735,
+       100.00000149011612
+      ]
+     },
+     "2": {
+      "center_mm": [
+       -35.00000014901161,
+       85.00000089406967,
+       50.00000074505806
+      ],
+      "edge_lengths_mm": [
+       28.00000086426735,
+       28.00000086426735,
+       100.00000149011612
+      ]
+     },
+     "3": {
+      "center_mm": [
+       -35.00000014901161,
+       -85.00000089406967,
+       50.00000074505806
+      ],
+      "edge_lengths_mm": [
+       28.00000086426735,
+       28.00000086426735,
+       100.00000149011612
+      ]
+     },
+     "4": {
+      "center_mm": [
+       0.0,
+       0.0,
+       104.00000214576721
+      ],
+      "edge_lengths_mm": [
+       100.00000149011612,
+       200.00000298023224,
+       8.00000037997961
+      ]
+     }
+    },
+    "latent": {
+     "0": {
+      "center_mm": [
+       35.00000014901161,
+       85.00000089406967,
+       50.00000074505806
+      ],
+      "edge_lengths_mm": [
+       28.00000086426735,
+       28.00000086426735,
+       100.00000149011612
+      ]
+     },
+     "1": {
+      "center_mm": [
+       35.00000014901161,
+       -85.00000089406967,
+       50.00000074505806
+      ],
+      "edge_lengths_mm": [
+       28.00000086426735,
+       28.00000086426735,
+       100.00000149011612
+      ]
+     },
+     "2": {
+      "center_mm": [
+       -35.00000014901161,
+       85.00000089406967,
+       50.00000074505806
+      ],
+      "edge_lengths_mm": [
+       28.00000086426735,
+       28.00000086426735,
+       100.00000149011612
+      ]
+     },
+     "3": {
+      "center_mm": [
+       -35.00000014901161,
+       -85.00000089406967,
+       50.00000074505806
+      ],
+      "edge_lengths_mm": [
+       28.00000086426735,
+       28.00000086426735,
+       100.00000149011612
+      ]
+     },
+     "4": {
+      "center_mm": [
+       0.0,
+       0.0,
+       104.00000214576721
+      ],
+      "edge_lengths_mm": [
+       100.00000149011612,
+       200.00000298023224,
+       8.00000037997961
+      ]
+     }
+    }
+   },
+   "pairs": [
+    {
+     "pair_id": "0-4",
+     "parent": 0,
+     "child": 4,
+     "contact_face_code": 4,
+     "contact_axis": 2,
+     "raw": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 27.999999999999996,
+      "thickness_mm": 8.0,
+      "analytical_ok": true,
+      "p_feasible": 0.9999709129333496,
+      "gnn_overlap_mm": 22.419482469558716,
+      "gnn_thickness_mm": 8.32204520702362,
+      "gnn_ok": true,
+      "bluff": false
+     },
+     "initial": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 27.999999999999996,
+      "thickness_mm": 8.0,
+      "analytical_ok": true,
+      "p_feasible": 0.9999709129333496,
+      "gnn_overlap_mm": 22.419482469558716,
+      "gnn_thickness_mm": 8.32204520702362,
+      "gnn_ok": true,
+      "bluff": false
+     },
+     "initial_p_feasible_param": 0.9996417760848999,
+     "initial_p_feasible_latent": 0.9999709129333496,
+     "param": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 28.00000086426735,
+      "thickness_mm": 8.00000037997961,
+      "analytical_ok": true,
+      "p_feasible": 0.9996417760848999,
+      "gnn_overlap_mm": 19.37292516231537,
+      "gnn_thickness_mm": 10.266005992889404,
+      "gnn_ok": true,
+      "bluff": false
+     },
+     "latent": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 28.00000086426735,
+      "thickness_mm": 8.00000037997961,
+      "analytical_ok": true,
+      "p_feasible": 0.9999709129333496,
+      "gnn_overlap_mm": 22.419482469558716,
+      "gnn_thickness_mm": 8.32204520702362,
+      "gnn_ok": true,
+      "bluff": false
+     }
+    },
+    {
+     "pair_id": "1-4",
+     "parent": 1,
+     "child": 4,
+     "contact_face_code": 4,
+     "contact_axis": 2,
+     "raw": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 27.999999999999996,
+      "thickness_mm": 8.0,
+      "analytical_ok": true,
+      "p_feasible": 0.9999685287475586,
+      "gnn_overlap_mm": 22.283021360635757,
+      "gnn_thickness_mm": 8.357807993888855,
+      "gnn_ok": true,
+      "bluff": false
+     },
+     "initial": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 27.999999999999996,
+      "thickness_mm": 8.0,
+      "analytical_ok": true,
+      "p_feasible": 0.9999685287475586,
+      "gnn_overlap_mm": 22.283021360635757,
+      "gnn_thickness_mm": 8.357807993888855,
+      "gnn_ok": true,
+      "bluff": false
+     },
+     "initial_p_feasible_param": 0.9996827840805054,
+     "initial_p_feasible_latent": 0.9999685287475586,
+     "param": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 28.00000086426735,
+      "thickness_mm": 8.00000037997961,
+      "analytical_ok": true,
+      "p_feasible": 0.9996827840805054,
+      "gnn_overlap_mm": 19.806915894150734,
+      "gnn_thickness_mm": 10.401800274848938,
+      "gnn_ok": true,
+      "bluff": false
+     },
+     "latent": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 28.00000086426735,
+      "thickness_mm": 8.00000037997961,
+      "analytical_ok": true,
+      "p_feasible": 0.9999685287475586,
+      "gnn_overlap_mm": 22.283021360635757,
+      "gnn_thickness_mm": 8.357807993888855,
+      "gnn_ok": true,
+      "bluff": false
+     }
+    },
+    {
+     "pair_id": "2-4",
+     "parent": 2,
+     "child": 4,
+     "contact_face_code": 4,
+     "contact_axis": 2,
+     "raw": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 27.999999999999996,
+      "thickness_mm": 8.0,
+      "analytical_ok": true,
+      "p_feasible": 0.9999701976776123,
+      "gnn_overlap_mm": 22.385576739907265,
+      "gnn_thickness_mm": 8.32388550043106,
+      "gnn_ok": true,
+      "bluff": false
+     },
+     "initial": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 27.999999999999996,
+      "thickness_mm": 8.0,
+      "analytical_ok": true,
+      "p_feasible": 0.9999701976776123,
+      "gnn_overlap_mm": 22.385576739907265,
+      "gnn_thickness_mm": 8.32388550043106,
+      "gnn_ok": true,
+      "bluff": false
+     },
+     "initial_p_feasible_param": 0.9996316432952881,
+     "initial_p_feasible_latent": 0.9999701976776123,
+     "param": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 28.00000086426735,
+      "thickness_mm": 8.00000037997961,
+      "analytical_ok": true,
+      "p_feasible": 0.9996316432952881,
+      "gnn_overlap_mm": 19.232505932450294,
+      "gnn_thickness_mm": 10.194368660449982,
+      "gnn_ok": true,
+      "bluff": false
+     },
+     "latent": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 28.00000086426735,
+      "thickness_mm": 8.00000037997961,
+      "analytical_ok": true,
+      "p_feasible": 0.9999701976776123,
+      "gnn_overlap_mm": 22.385576739907265,
+      "gnn_thickness_mm": 8.32388550043106,
+      "gnn_ok": true,
+      "bluff": false
+     }
+    },
+    {
+     "pair_id": "3-4",
+     "parent": 3,
+     "child": 4,
+     "contact_face_code": 4,
+     "contact_axis": 2,
+     "raw": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 27.999999999999996,
+      "thickness_mm": 8.0,
+      "analytical_ok": true,
+      "p_feasible": 0.9999672174453735,
+      "gnn_overlap_mm": 22.2657211124897,
+      "gnn_thickness_mm": 8.374787867069244,
+      "gnn_ok": true,
+      "bluff": false
+     },
+     "initial": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 27.999999999999996,
+      "thickness_mm": 8.0,
+      "analytical_ok": true,
+      "p_feasible": 0.9999672174453735,
+      "gnn_overlap_mm": 22.2657211124897,
+      "gnn_thickness_mm": 8.374787867069244,
+      "gnn_ok": true,
+      "bluff": false
+     },
+     "initial_p_feasible_param": 0.9996734857559204,
+     "initial_p_feasible_latent": 0.9999672174453735,
+     "param": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 28.00000086426735,
+      "thickness_mm": 8.00000037997961,
+      "analytical_ok": true,
+      "p_feasible": 0.9996734857559204,
+      "gnn_overlap_mm": 19.669950008392334,
+      "gnn_thickness_mm": 10.333187878131866,
+      "gnn_ok": true,
+      "bluff": false
+     },
+     "latent": {
+      "contact_face_code": 4,
+      "contact_axis": 2,
+      "overlap_mm": 28.00000086426735,
+      "thickness_mm": 8.00000037997961,
+      "analytical_ok": true,
+      "p_feasible": 0.9999672174453735,
+      "gnn_overlap_mm": 22.2657211124897,
+      "gnn_thickness_mm": 8.374787867069244,
+      "gnn_ok": true,
+      "bluff": false
+     }
+    }
+   ]
+  }
+ ]
+}

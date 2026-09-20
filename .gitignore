@@ -1,0 +1,41 @@
+# Ignore everything inside the data folder
+data/*
+!data/.gitkeep
+
+# wandb folder
+wandb/*
+
+# pycache and other Python artifacts
+**/__pycache__/
+*.pyc
+*.pyo
+
+gnn_models/*
+
+encoder_decoder_model/*
+
+# Trained-model checkpoints in the deployment opti folders
+pose_orientation_two_robots/ml_verifier/*_model/*.pth
+
+# Local editor and assistant settings (per-user, not for sharing)
+.claude/
+
+# Data export formats
+*.csv
+*.png
+*.pkl
+*.txt
+*.stl
+*.3mf
+*.html
+
+# Local training logs (e.g. tools/train_box_decoder.py)
+*.log
+
+
+# Local assistant conventions, not part of the submission
+CLAUDE.md
+AGENTS.md
+
+# --- Submission artifact: the dataset the results rest on ---
+!data/mixed_dataset_small_10mm.txt
