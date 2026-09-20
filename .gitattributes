@@ -1,0 +1,6 @@
+# The datasets and checkpoints are byte-exact artifacts of the runs behind the thesis.
+# Never let git rewrite their line endings: a CRLF checkout changes the file and the
+# numbers derived from it are no longer the ones reported.
+data/*.txt -text
+*.pth -text
+*.pt -text

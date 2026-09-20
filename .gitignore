@@ -1,0 +1,49 @@
+# Ignore everything inside the data folder
+data/*
+!data/.gitkeep
+
+# wandb folder
+wandb/*
+
+# pycache and other Python artifacts
+**/__pycache__/
+*.pyc
+*.pyo
+
+gnn_models/*
+
+encoder_decoder_model/*
+
+# Trained-model checkpoints in the deployment opti folders
+pose_orientation_two_robots/ml_verifier/*_model/*.pth
+
+# Local editor and assistant settings (per-user, not for sharing)
+.claude/
+
+# Data export formats
+*.csv
+*.png
+*.pkl
+*.txt
+*.stl
+*.3mf
+*.html
+
+# Local training logs (e.g. tools/train_box_decoder.py)
+*.log
+
+__pycache__/
+*.pyc
+venv/
+
+# Local assistant conventions, not part of the submission
+CLAUDE.md
+AGENTS.md
+
+# --- Submission artifacts: the files the thesis results rest on, kept despite the rules above ---
+!data/sim_shape_dataset_1613.txt
+!data/sim_shape_continuum_2027.txt
+!encoder_decoder_model/best_encoder_decoder_general_canon_lv_v14_lam005_latentdim32_active9.pth
+!encoder_decoder_model/shape_latents_lv_v14_lam005.pt
+!encoder_decoder_model/latents_continuum.pth
+!gnn_models/sim_gnn_shape_node37_32.pth
